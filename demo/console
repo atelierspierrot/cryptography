@@ -1,0 +1,57 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Show errors at least initially
+ *
+ * `E_ALL` => for hard dev
+ * `E_ALL & ~E_STRICT` => for hard dev in PHP5.4 avoiding strict warnings
+ * `E_ALL & ~E_NOTICE & ~E_STRICT` => classic setting
+ */
+@ini_set('display_errors','1'); @error_reporting(E_ALL);
+//@ini_set('display_errors','1'); @error_reporting(E_ALL & ~E_STRICT);
+//@ini_set('display_errors','1'); @error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
+
+/**
+ * Set a default timezone to avoid PHP5 warnings
+ */
+$dtmz = @date_default_timezone_get();
+date_default_timezone_set($dtmz?:'Europe/Paris');
+
+// get the Composer autoloader
+if (file_exists($a = __DIR__.'/../../../autoload.php')) {
+    require_once $a;
+} elseif (file_exists($b = __DIR__.'/../vendor/autoload.php')) {
+    require_once $b;
+
+// else error, classes can't be found
+} else {
+    die('You need to run Composer on your project to use this interface!');
+}
+
+$str = 'True friends stab you in the front';
+$str_long = $str.' - Oscar Wilde';
+$plain = \Cryptography\Cryptography::ALPHABET_UPPER.\Cryptography\Cryptography::SPACE;
+
+echo "> plain text key is : '$plain'".PHP_EOL;
+$key = \Cryptography\Cryptography::randomize($plain);
+echo "> ciphered key is : '$key'".PHP_EOL;
+
+$c = new \Cryptography\SubstitutionCipher\SimpleSubstitution($plain, $key);
+echo "> SimpleSubstitution object is : ".PHP_EOL;
+echo var_export($c,1).PHP_EOL;
+
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString(true, ' | ', PHP_EOL).PHP_EOL;
+
+$c->setFlag(\Cryptography\Cryptography::KEEP_SPACES);
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+
