@@ -10,18 +10,47 @@
 namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
+use Cryptography\SubstitutionTable\ClosureSubstitutionTable;
 
 /**
+ * This use an affine function to calculate the cipher encoding:
+ *
+ *      y = a * x + b
+ *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
 class AffineSubstitution
     extends SimpleSubstitution
 {
 
+    /**
+     * @var ClosureSubstitutionTable The substitution table object used to crypt/decrypt
+     */
+    protected $substitution_table;
+
+    /**
+     * @var int The coefficient of the affine function
+     */
     protected $a;
+
+    /**
+     * @var int The ordinate of the affine function
+     */
     protected $b;
 
-    public function __construct($a, $b, $plaintext_key = null)
+    /**
+     * @var array An internal cache array to light-weight calculation
+     */
+    private $_cache = array();
+
+    /**
+     * @param string $a
+     * @param array $b
+     * @param null $plaintext_key
+     * @param int $flag
+     * @throws \InvalidArgumentException if `$a` or `$b` does not fit requirements
+     */
+    public function __construct($a, $b, $plaintext_key = null, $flag = Cryptography::PROCESS_ALL)
     {
         if (is_null($plaintext_key)) {
             $plaintext_key = Cryptography::ALPHABET_UPPER.Cryptography::SPACE;
@@ -38,40 +67,99 @@ class AffineSubstitution
         }
         $this->a = $a;
         $this->b = $b;
-        $this->plaintext_key = $plaintext_key;
+        $_this = $this;
+        $this
+            ->setSubstitutionTable(
+                new ClosureSubstitutionTable(
+                    $plaintext_key,
+                    function ($l) use ($_this) { return $_this->_cryptVal($l); },
+                    function ($l) use ($_this) { return $_this->_decryptVal($l); }
+                )
+            )
+            ->setFlag($flag)
+        ;
     }
 
+    /**
+     * Simple reset method: nothing to do
+     *
+     * @return $this
+     */
+    protected function _reset()
+    {
+        return $this;
+    }
+
+    /**
+     * Callback method used to encrypt each part of the original string, called as a closure
+     *
+     * @param $t
+     * @return mixed
+     */
+    protected function _cryptVal($t)
+    {
+        if (!array_key_exists($t, $this->_cache)) {
+            $table  = str_split($this->getSubstitutionTable()->getPlaintextKey());
+            $orig_i = array_search($t, $table);
+            $v = ($this->a * $orig_i + $this->b);
+            $fv = ($this->a * $orig_i + $this->b) % 26;
+            $this->_cache[$t] = $table[$fv];
+//echo "t: $t | orig: $orig_i | v: $v | final: $fv".PHP_EOL;
+        }
+        return $this->_cache[$t];
+    }
+
+    /**
+     * Callback method used to decrypt each part of the original string, called as a closure
+     *
+     * @param $t
+     * @return mixed
+     */
+    protected function _decryptVal($t)
+    {
+        if (!in_array($t, $this->_cache)) {
+            $table  = str_split($this->getSubstitutionTable()->getPlaintextKey());
+            $orig_i = array_search($t, $table);
+            $v      = 1 / ($this->a % 26);
+            $fv = abs($v * $orig_i - $v * $this->b);
+//echo "t: $t | orig: $orig_i | v: $v | final: $fv".PHP_EOL;
+            $this->_cache[$t] = $table[$fv];
+        }
+        return array_search($t, $this->_cache);
+    }
+
+    /**
+     * Crypt a string
+     *
+     * @param $str
+     * @return mixed|string
+     */
     public function crypt($str)
     {
         $str    = $this->_prepare($str);
-        $table  = str_split($this->plaintext_key);
         $s      = str_split($str);
         $r      = array();
         foreach ($s as $l) {
-            $orig_i = array_search($l, $table);
-            $t = ($this->a * $orig_i + $this->b);
-            $final_i = ($this->a * $orig_i + $this->b) % 26;
-//echo "l: $l | orig: $orig_i | t: $t | final: $final_i".PHP_EOL;
-            $r[] = $table[$final_i];
+            $r[] = $this->_cryptVal($l);
         }
         return implode('', $r);
     }
 
-    /*
-     * FAILED
+    /**
+     * Decrypt a string
+     *
+     * @param $str
+     * @return mixed|string
+     *
+     * @TODO
      */
     public function decrypt($str)
     {
         $str    = $this->_prepare($str);
-        $table  = str_split($this->plaintext_key);
         $s      = str_split($str);
         $r      = array();
-        $t      = 1 / ($this->a % 26);
         foreach ($s as $l) {
-            $orig_i = array_search($l, $table);
-            $final_i = abs($t * $orig_i - $t * $this->b);
-//echo "l: $l | orig: $orig_i | t: $t | final: $final_i".PHP_EOL;
-            $r[] = $table[$final_i];
+            $r[] = $this->_decryptVal($l);
         }
         return implode('', $r);
     }

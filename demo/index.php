@@ -103,7 +103,7 @@ if (file_exists($a = __DIR__.'/../../../autoload.php')) {
 
         <div id="content" role="main">
 
-            <h2>Class <code>SubstitutionCipher</code></h2>
+            <h2>Namespace <code>SubstitutionCipher</code></h2>
 
 <?php
 $str = 'True friends stab you in the front';
@@ -127,7 +127,7 @@ $plain = \Cryptography\Cryptography::ALPHABET_UPPER.\Cryptography\Cryptography::
 <?php
 
 echo "> plain text key is : '$plain'".PHP_EOL;
-$key = \Cryptography\Cryptography::randomize($plain);
+$key = \Cryptography\Helper::randomize($plain);
 echo "> ciphered key is : '$key'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\SimpleSubstitution($plain, $key);
@@ -294,6 +294,187 @@ $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
 $decrypted = $c->decrypt($crypted);
 echo "> decrypted string is : ".$decrypted.PHP_EOL;
+?>
+            </pre>
+
+            <h3><code>SubstitutionCipher\HomophonicSubstitution</code></h3>
+
+            <pre>
+<?php
+
+$keys = array(
+    'A' => array(1,28),
+    'B' => array(2),
+    'C' => array(3),
+    'D' => array(4),
+    'E' => array(5,29,33),
+    'F' => array(6),
+    'G' => array(7),
+    'H' => array(8),
+    'I' => array(9,30),
+    'J' => array(10),
+    'K' => array(11),
+    'L' => array(12),
+    'M' => array(13),
+    'N' => array(14),
+    'O' => array(15,31),
+    'P' => array(16),
+    'Q' => array(17),
+    'R' => array(18),
+    'S' => array(19),
+    'T' => array(20),
+    'U' => array(21,32),
+    'V' => array(22),
+    'W' => array(23),
+    'X' => array(24),
+    'Y' => array(25),
+    'Z' => array(26),
+    ' ' => array(27,34),
+);
+echo "> complex key are : ".PHP_EOL;
+var_dump($keys);
+
+$c = new \Cryptography\SubstitutionCipher\HomophonicSubstitution($keys);
+echo "> HomophonicSubstitution is : ".PHP_EOL;
+echo var_export($c,1).PHP_EOL;
+
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString(true, ' | ', PHP_EOL).PHP_EOL;
+
+?>
+            </pre>
+
+            <p>Same example keeping spaces:</p>
+
+            <pre>
+<?php
+$c->setFlag(\Cryptography\Cryptography::KEEP_SPACES);
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+?>
+            </pre>
+
+            <h3><code>SubstitutionCipher\RepertorySubstitution</code></h3>
+
+            <pre>
+<?php
+
+$keys = array(
+    'true' => 1,
+    'en' => 5,
+    'A' => 28,
+    'B' => 2,
+    'C' => 3,
+    'D' => 4,
+    'E' => 29,
+    'F' => 6,
+    'G' => 7,
+    'H' => 8,
+    'I' => 30,
+    'J' => 10,
+    'K' => 11,
+    'L' => 12,
+    'M' => 13,
+    'N' => 14,
+    'O' => 31,
+    'P' => 16,
+    'Q' => 17,
+    'R' => 18,
+    'S' => 19,
+    'T' => 20,
+    'U' => 32,
+    'V' => 22,
+    'W' => 23,
+    'X' => 24,
+    'Y' => 25,
+    'Z' => 26,
+    ' ' => 34,
+);
+echo "> complex key are : ".PHP_EOL;
+var_dump($keys);
+
+$c = new \Cryptography\SubstitutionCipher\RepertorySubstitution($keys);
+echo "> RepertorySubstitution is : ".PHP_EOL;
+echo var_export($c,1).PHP_EOL;
+
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString(true, ' | ', PHP_EOL).PHP_EOL;
+
+?>
+            </pre>
+
+            <p>Same example keeping spaces:</p>
+
+            <pre>
+<?php
+$c->setFlag(\Cryptography\Cryptography::KEEP_SPACES);
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+?>
+            </pre>
+
+            <h3><code>SubstitutionCipher\PolyAlphabeticSubstitution</code></h3>
+
+            <pre>
+<?php
+
+echo "> plain text key is : '$plain'".PHP_EOL;
+$freq = 5;
+echo "> frequency value is : '$freq'".PHP_EOL;
+$rot = 3;
+echo "> rotation value is : '$rot'".PHP_EOL;
+
+$c = new \Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution($plain, $freq, $rot);
+echo "> PolyAlphabeticSubstitution is : ".PHP_EOL;
+echo var_export($c,1).PHP_EOL;
+
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString(true, ' | ', PHP_EOL).PHP_EOL;
+
+?>
+            </pre>
+
+            <p>Same example keeping spaces:</p>
+
+            <pre>
+<?php
+$c->setFlag(\Cryptography\Cryptography::KEEP_SPACES);
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+?>
+            </pre>
+
+
+
+            <h3>Substitution presets</h3>
+
+            <h4><code>SubstitutionTable\TabulaRecta</code></h4>
+
+            <pre>
+<?php
+$c = new \Cryptography\SubstitutionTable\TabulaRecta(\Cryptography\Cryptography::ALPHABET_UPPER);
+echo "> TabulaRecta is :".PHP_EOL.$c->substitutionTableToString().PHP_EOL;
 ?>
             </pre>
 

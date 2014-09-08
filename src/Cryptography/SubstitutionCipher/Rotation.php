@@ -10,6 +10,8 @@
 namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
+use \Cryptography\Helper;
+use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
 
 /**
  * Rotation substitution: "Caesar cipher"
@@ -20,32 +22,61 @@ class Rotation
     extends SimpleSubstitution
 {
 
+    /**
+     * @var int The rotation indice
+     */
     protected $rotation_value = 0;
 
+    /**
+     * @param string $plaintext_key
+     * @param array $rotation_value
+     * @param int $flag
+     */
     public function __construct($plaintext_key, $rotation_value, $flag = Cryptography::PROCESS_ALL)
     {
         $this
-            ->_setPlaintextKey($plaintext_key)
+            ->setSubstitutionTable(
+                new SimpleSubstitutionTable($plaintext_key)
+            )
             ->_setRotationValue($rotation_value)
             ->setFlag($flag)
         ;
     }
 
+    /**
+     * Define the rotation indice
+     *
+     * @param $int
+     * @return $this
+     */
     protected function _setRotationValue($int)
     {
         $this->rotation_value = $int;
         return $this->_reset();
     }
 
+    /**
+     * Reset the substitution table to its original form
+     *
+     * @return $this
+     */
     protected function _reset()
     {
         parent::_reset();
-        $this->_setCipherKey(
-            Cryptography::rotate($this->plaintext_key, ($this->rotation_value - 1))
+        $this->substitution_table->setSubstitutions(
+            array(str_split(Helper::rotate(
+                $this->substitution_table->getPlaintextKey(), ($this->rotation_value - 1)
+            )))
         );
         return $this;
     }
 
+    /**
+     * Shortcut or `ROT13`
+     *
+     * @param $str
+     * @return mixed|string
+     */
     public static function rot13($str)
     {
         $_this = new self(Cryptography::getAllCharacters(),13);
