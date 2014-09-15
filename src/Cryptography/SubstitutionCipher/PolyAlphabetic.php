@@ -11,17 +11,17 @@ namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
 use \Cryptography\Helper;
-use \Cryptography\SubstitutionTable\RotarySubstitutionTable;
+use \Cryptography\SubstitutionTable\Rotary as RotarySubstitutionTable;
 
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class PolyAlphabeticSubstitution
-    extends SimpleSubstitution
+class PolyAlphabetic
+    extends Simple
 {
 
     /**
-     * @var RotarySubstitutionTable The substitution table object used to crypt/decrypt
+     * @var \Cryptography\SubstitutionTable\Rotary The substitution table object used to crypt/decrypt
      */
     protected $substitution_table;
 
@@ -100,17 +100,22 @@ class PolyAlphabeticSubstitution
     /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function crypt($str)
+    public function crypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
-        $str_e  = '';
+        $str_e  = ($as_array ? array() : '');
         while (strlen($str)>0) {
             $substr = substr($str, 0, $this->frequency);
             $str    = substr($str, $this->frequency);
-            $str_e .= $this->_cryptRun($substr);
+            if ($as_array) {
+                $str_e[] = $this->_cryptRun($substr, $as_array);
+            } else {
+                $str_e .= $this->_cryptRun($substr);
+            }
             $this->substitution_table->rotate();
         }
         return $str_e;
@@ -119,10 +124,11 @@ class PolyAlphabeticSubstitution
     /**
      * One run of encryption on a string
      *
-     * @param $str
-     * @return string
+     * @param   string  $str
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    protected function _cryptRun($str)
+    protected function _cryptRun($str, $as_array = false)
     {
         $table  = $this->substitution_table->getSubstitutionTable();
         $s      = str_split($str);
@@ -134,24 +140,29 @@ class PolyAlphabeticSubstitution
                 $r[] = $table[$l];
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function decrypt($str)
+    public function decrypt($str, $as_array = false)
     {
         $this->_reset();
         $str    = $this->_prepare($str);
-        $str_e  = '';
+        $str_e  = ($as_array ? array() : '');
         while (strlen($str)>0) {
             $substr = substr($str, 0, $this->frequency);
             $str    = substr($str, $this->frequency);
-            $str_e .= $this->_decryptRun($substr);
+            if ($as_array) {
+                $str_e[] = $this->_decryptRun($substr, $as_array);
+            } else {
+                $str_e .= $this->_decryptRun($substr);
+            }
             $this->substitution_table->rotate();
         }
         return $str_e;
@@ -160,10 +171,11 @@ class PolyAlphabeticSubstitution
     /**
      * One run of decryption on a string
      *
-     * @param $str
-     * @return string
+     * @param   string  $str
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    protected function _decryptRun($str)
+    protected function _decryptRun($str, $as_array = false)
     {
         $table  = $this->substitution_table->getSubstitutionTable();
         $s      = str_split($str);
@@ -175,7 +187,7 @@ class PolyAlphabeticSubstitution
                 $r[] = array_search($l, $table);
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
 }

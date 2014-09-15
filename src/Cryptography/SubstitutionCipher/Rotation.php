@@ -11,7 +11,7 @@ namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
 use \Cryptography\Helper;
-use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
+use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
  * Rotation substitution: "Caesar cipher"
@@ -19,7 +19,7 @@ use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
 class Rotation
-    extends SimpleSubstitution
+    extends Simple
 {
 
     /**

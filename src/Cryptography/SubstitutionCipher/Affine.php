@@ -10,7 +10,7 @@
 namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
-use Cryptography\SubstitutionTable\ClosureSubstitutionTable;
+use \Cryptography\SubstitutionTable\Closure as ClosureSubstitutionTable;
 
 /**
  * This use an affine function to calculate the cipher encoding:
@@ -19,12 +19,12 @@ use Cryptography\SubstitutionTable\ClosureSubstitutionTable;
  *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class AffineSubstitution
-    extends SimpleSubstitution
+class Affine
+    extends Simple
 {
 
     /**
-     * @var ClosureSubstitutionTable The substitution table object used to crypt/decrypt
+     * @var \Cryptography\SubstitutionTable\Closure The substitution table object used to crypt/decrypt
      */
     protected $substitution_table;
 
@@ -131,10 +131,11 @@ class AffineSubstitution
     /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function crypt($str)
+    public function crypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $s      = str_split($str);
@@ -142,18 +143,19 @@ class AffineSubstitution
         foreach ($s as $l) {
             $r[] = $this->_cryptVal($l);
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      *
      * @TODO
      */
-    public function decrypt($str)
+    public function decrypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $s      = str_split($str);
@@ -161,7 +163,7 @@ class AffineSubstitution
         foreach ($s as $l) {
             $r[] = $this->_decryptVal($l);
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
 }

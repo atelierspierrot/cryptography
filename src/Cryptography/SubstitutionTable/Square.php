@@ -15,37 +15,37 @@ use \Cryptography\Helper;
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class SimpleSubstitutionTable
-    extends AbstractSubstitutionTable
+class Square
+    extends Simple
 {
 
     /**
      * @param string $plaintext_key
-     * @param array $substitution_table
      */
-    public function __construct(
-        $plaintext_key = '', $substitution_table = array()
-    ) {
-        if (is_string($substitution_table)) {
-            $substitution_table = str_split($substitution_table);
+    public function __construct($plaintext_key = '')
+    {
+        parent::__construct($plaintext_key);
+        $this->_buildSubstitutionTable();
+    }
+
+    /**
+     * @return $this
+     */
+    protected function _buildSubstitutionTable()
+    {
+        $size   = ceil(sqrt(strlen($this->plaintext_key)));
+        $pt     = str_split($this->plaintext_key);
+        $table  = array();
+        foreach ($pt as $i=>$k) {
+            $j = $i+1;
+            if ($j<=$size) {
+                $table[$i] = '1'.(($i % $size)+1);
+            } else {
+                $table[$i] = (floor($i/$size)+1).(($i % $size)+1);
+            }
         }
-        parent::__construct($plaintext_key, array($substitution_table));
-    }
-
-    /**
-     * @return array|mixed|string
-     */
-    public function getPlaintextKey()
-    {
-        return $this->plaintext_key;
-    }
-
-    /**
-     * @return array|mixed
-     */
-    public function getSubstitutions()
-    {
-        return $this->substitutions;
+        $this->setSubstitutions(array($table));
+        return $this;
     }
 
     /**
@@ -57,12 +57,7 @@ class SimpleSubstitutionTable
         $table  = array();
         $pt     = is_string($this->plaintext_key) ? str_split($this->plaintext_key) : $this->plaintext_key;
         foreach ($pt as $i=>$k) {
-            foreach ($this->substitutions as $j=>$l) {
-                $table[$k][] = $this->substitutions[$j][$i];
-            }
-            if (count($table[$k])==1) {
-                $table[$k] = array_shift($table[$k]);
-            }
+            $table[$k] = $this->substitutions[0][$i];
         }
         return $table;
     }

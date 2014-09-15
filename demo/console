@@ -28,16 +28,64 @@ if (file_exists($a = __DIR__.'/../../../autoload.php')) {
     die('You need to run Composer on your project to use this interface!');
 }
 
+
 $str = 'True friends stab you in the front';
 $str_long = $str.' - Oscar Wilde';
-$plain = \Cryptography\Cryptography::ALPHABET_UPPER.\Cryptography\Cryptography::SPACE;
 
-echo "> plain text key is : '$plain'".PHP_EOL;
+$letters = 'ABCDEF';
+$letters_md5 = 'f1c14fd68e5cd1f21944593bc8b42bb0';
+$letters_md5_cracked = 'FFCABE';
+$letters_sha1 = '91bb8c6fdefdb008d9a1caddd05045d5e7654e3d';
+$letters_sha1_cracked = 'BECCAA';
+
+$plain = \Cryptography\Cryptography::ALPHABET_UPPER.\Cryptography\Cryptography::SPACE;
+$plain_randomized = \Cryptography\Helper::randomize($plain);
+
+$str_usid = "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood. Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.";
+
+$key_ap = 'ATELIERS PIERROT CRYPTOGRAPHY';
+
+$multi_keys = array(
+    'A' => array(1,28),
+    'B' => array(2),
+    'C' => array(3),
+    'D' => array(4),
+    'E' => array(5,29,33),
+    'F' => array(6),
+    'G' => array(7),
+    'H' => array(8),
+    'I' => array(9,30),
+    'J' => array(10),
+    'K' => array(11),
+    'L' => array(12),
+    'M' => array(13),
+    'N' => array(14),
+    'O' => array(15,31),
+    'P' => array(16),
+    'Q' => array(17),
+    'R' => array(18),
+    'S' => array(19),
+    'T' => array(20),
+    'U' => array(21,32),
+    'V' => array(22),
+    'W' => array(23),
+    'X' => array(24),
+    'Y' => array(25),
+    'Z' => array(26),
+    ' ' => array(27,34),
+);
+
+/*/ // Test system hashing algorithms
+$algos = hash_algos();
+var_export($algos);
+//*/
+
+/*/ // SIMPLE substitution
 $key = \Cryptography\Cryptography::randomize($plain);
 echo "> ciphered key is : '$key'".PHP_EOL;
 
-$c = new \Cryptography\SubstitutionCipher\SimpleSubstitution($plain, $key);
-echo "> SimpleSubstitution object is : ".PHP_EOL;
+$c = new \Cryptography\SubstitutionCipher\Simple($plain, $key);
+echo "> Simple object is : ".PHP_EOL;
 echo var_export($c,1).PHP_EOL;
 
 $crypted = $c->crypt($str);
@@ -46,12 +94,110 @@ echo "> crypted string is : ".$crypted.PHP_EOL;
 $decrypted = $c->decrypt($crypted);
 echo "> decrypted string is : ".$decrypted.PHP_EOL;
 
-echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString(true, ' | ', PHP_EOL).PHP_EOL;
+echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString().PHP_EOL;
 
 $c->setFlag(\Cryptography\Cryptography::KEEP_SPACES);
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
 $decrypted = $c->decrypt($crypted);
 echo "> decrypted string is : ".$decrypted.PHP_EOL;
+//*/
+
+/*/ // VIGENERE cipher
+$c = new \Cryptography\Preset\VigenereCipher($key, \Cryptography\Cryptography::ALPHABET_UPPER);
+
+$crypted = $c->crypt($str_usid);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+//*/
+
+/*/ // HOMOPHONIC substitution
+echo "> complex key is : ".PHP_EOL;
+var_export($multi_keys);
+
+$c = new \Cryptography\SubstitutionCipher\Homophonic($multi_keys);
+//echo "> Homophonic is : ".PHP_EOL;
+//echo var_export($c,1).PHP_EOL;
+
+$crypted = $c->crypt($str);
+echo "> crypted string is : ".$crypted.PHP_EOL;
+
+$decrypted = $c->decrypt($crypted);
+echo "> decrypted string is : ".$decrypted.PHP_EOL;
+
+//echo "> substitution table is:".PHP_EOL.$c->substitutionTableToString().PHP_EOL;
+//*/
+
+/*/ // StringBuilder
+$c = new \Cryptography\Tools\StringBuilder($letters);
+
+echo "Processing string builder by combinations:".PHP_EOL;
+echo "number of possible combinations: ".var_export($c->getCombinationNumber(),1).PHP_EOL;
+$t = $c->process();
+var_export($t);
+
+echo "Processing string builder by permutations:".PHP_EOL;
+echo "number of possible combinations: ".var_export($c->getPermutationNumber(),1).PHP_EOL;
+$t = $c->setFlag(\Cryptography\Cryptography::TYPE_PERMUTATION)->process();
+var_export($t);
+
+//var_export($c);
+//*/
+
+//*/ // StringCracker
+$c = new \Cryptography\Tools\StringCracker('md5',
+    'ABCDEF'
+//    \Cryptography\Cryptography::ALPHABET_UPPER
+);
+echo "searching to crack string '$letters_md5' with algo 'md5' (must be '$letters_md5_cracked')".PHP_EOL;
+$v = $c->crack($letters_md5);
+echo "=> found: ".$v.PHP_EOL;
+
+echo "searching to crack string '$letters_sha1' with algo 'sha1' (must be '$letters_sha1_cracked')".PHP_EOL;
+$v = $c->setClosure('sha1')->crack($letters_sha1);
+echo "=> found: ".$v.PHP_EOL;
+//var_export($c);
+//*/
+exit('yo');
+$cracker = new \Cryptography\Preset\CryptedCracker();
+// MD5
+echo $cracker
+    ->setCryptedString($letters_md5)
+    ->processAllHashes()
+    ;
+// SHA1
+echo $cracker
+    ->setCryptedString($letters_sha1)
+    ->processAllHashes()
+    ;
+
+/*/
+function pc_permute($items, $perms = array( )) {
+echo "receiving items ".join('-', $items).PHP_EOL;
+    if (empty($items)) {
+        echo "> one run | perms are:".PHP_EOL;
+
+        print join('-', $perms) . "\n";
+    }  else {
+        for ($i = count($items) - 1; $i >= 0; --$i) {
+            $newitems = $items;
+            $newperms = $perms;
+            list($foo) = array_splice($newitems, $i, 1);
+            array_unshift($newperms, $foo);
+            pc_permute($newitems, $newperms);
+        }
+    }
+}
+
+
+//pc_permute(array(0, 1, 2, 3, 4, 5, 7, 8));
+pc_permute(str_split($letters));
+//*/
+
+
+//var_dump($c);
+
 
 

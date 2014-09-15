@@ -97,6 +97,50 @@ class Helper
         return $return;
     }
 
+    public static function homogenizeString($str, $condition)
+    {
+        if (is_array($str)) {
+            foreach ($str as $i=>$v) {
+                $str[$i] = self::homogenizeString($v, $condition);
+            }
+        } else {
+            // upper case?
+            if (Helper::testCase($condition, 'upper')) {
+                $str = strtoupper($str);
+
+            // lower case?
+            } elseif (Helper::testCase($condition, 'lower')) {
+                $str = strtolower($str);
+            }
+        }
+
+        return $str;
+    }
+
+    /**
+     * This will clean a string keeping only the characters in `$allowed`
+     *
+     * @param string $str
+     * @param string $allowed
+     * @return string
+     */
+    public static function sanitizeString($str, $allowed = Cryptography::ALPHABET_UPPER_REGEX)
+    {
+        return preg_replace('/[^'.$allowed.' ]/', '', $str);
+    }
+
+    /**
+     * Strip spaces in a string
+     *
+     * @param string $str
+     * @param string $replace
+     * @return string
+     */
+    public static function stripSpaces($str, $replace = '')
+    {
+        return preg_replace('/\s+/ix', $replace, $str);
+    }
+
 }
 
 // Endfile

@@ -11,13 +11,13 @@ namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
 use \Cryptography\Helper;
-use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
+use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class HomophonicSubstitution
-    extends SimpleSubstitution
+class Homophonic
+    extends Simple
 {
 
     /**
@@ -112,10 +112,11 @@ class HomophonicSubstitution
     /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function crypt($str)
+    public function crypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
@@ -128,18 +129,19 @@ class HomophonicSubstitution
                 $r[] = $table[$l][array_rand($table[$l])];
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      *
      * @TODO
      */
-    public function decrypt($str)
+    public function decrypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
@@ -156,8 +158,125 @@ class HomophonicSubstitution
                 }
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
+
+/*/
+// try to retrieve all possible results
+    private $_table = array();
+
+    protected function _getOrgnizedTable()
+    {
+        if (empty($this->_table)) {
+            $this->_table = $this->_prepareSubstitutionTable(
+                $this->substitution_table->getSubstitutionTable()
+            );
+        }
+        return $this->_table;
+    }
+
+    public function decrypt($str, $as_array = false)
+    {
+        $table  = $this->_getOrgnizedTable();
+        $str    = $this->_prepare($str);
+        $original_str = $str;
+
+        $min_l  = strlen($this->min);
+        $max_l  = strlen($this->max);
+        $results = array();
+        $r      = array();
+
+        while (strlen($str)>0) {
+            if ($str{0} == Cryptography::SPACE && ($this->flag & Cryptography::KEEP_SPACES)) {
+                $r[] = Cryptography::SPACE;
+            } else {
+                for ($i=$min_l; $i<=$max_l; $i++) {
+                    $l = substr($str, 0, $i);
+                    $str = substr($str, strlen($i));
+
+                    if (array_key_exists($l, $this->_table)) {
+                        $r[] = $this->_table[$l];
+                    }
+                }
+            }
+        }
+
+        return ($as_array ? $r : implode('', $r));
+
+        $s      = str_split($str, strlen($this->min));
+        foreach ($s as $l) {
+            if ($l==Cryptography::SPACE && ($this->flag & Cryptography::KEEP_SPACES)) {
+                $r[] = Cryptography::SPACE;
+            } else {
+                foreach ($table as $index=>$items) {
+                    if (in_array($l, $items)) {
+                        $r[] = $index;
+                    }
+                }
+            }
+        }
+        return ($as_array ? $r : implode('', $r));
+    }
+
+    protected function _prepareSubstitutionTable(array $table)
+    {
+        $r = array();
+        foreach ($table as $i=>$v) {
+            if (is_array($v)) {
+                foreach ($v as $k) {
+                    $r[$k] = $i;
+                }
+            } else {
+                $r[$v] = $i;
+            }
+        }
+        ksort($r);
+        return $r;
+    }
+
+    protected function _decryptRun($str, $pos = 0)
+    {
+        $table  = $this->substitution_table->getSubstitutionTable();
+        $min_l  = strlen($this->min);
+        $max_l  = strlen($this->max);
+        $original_str = $str;
+        $results = array();
+
+
+        if ($str{0} == Cryptography::SPACE && ($this->flag & Cryptography::KEEP_SPACES)) {
+            $r[] = Cryptography::SPACE;
+        } else {
+            for ($i=$min_l; $i<=$max_l; $i++) {
+                $l = substr($str, 0, $i);
+                $str = substr($str, strlen($i));
+
+                foreach ($table as $index=>$items) {
+                    if (in_array($l, $items)) {
+                        $r[] = $index;
+                    }
+                }
+            }
+        }
+
+        return ($as_array ? $r : implode('', $r));
+
+        $s      = str_split($str, strlen($this->min));
+        $r      = array();
+        foreach ($s as $l) {
+            if ($l==Cryptography::SPACE && ($this->flag & Cryptography::KEEP_SPACES)) {
+                $r[] = Cryptography::SPACE;
+            } else {
+                foreach ($table as $index=>$items) {
+                    if (in_array($l, $items)) {
+                        $r[] = $index;
+                    }
+                }
+            }
+        }
+        return ($as_array ? $r : implode('', $r));
+    }
+
+//*/
 
 }
 

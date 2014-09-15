@@ -15,7 +15,7 @@ use \Cryptography\Helper;
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class ClosureSubstitutionTable
+class Closure
     extends AbstractSubstitutionTable
 {
 

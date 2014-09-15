@@ -118,38 +118,26 @@ abstract class AbstractSubstitutionCipher
      */
     protected function _prepare($str)
     {
-        if (is_array($str)) {
-            foreach ($str as $i=>$v) {
-                $str[$i] = self::_prepare($v);
-            }
-        } else {
-            // upper case?
-            if (Helper::testCase($this->substitution_table->getPlaintextKey(), 'upper')) {
-                return strtoupper($str);
-                // lower case?
-            } elseif (Helper::testCase($this->substitution_table->getPlaintextKey(), 'lower')) {
-                return strtolower($str);
-            } else {
-                return $str;
-            }
-        }
+        return Helper::homogenizeString($str, $this->substitution_table->getPlaintextKey());
     }
 
     /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    abstract function crypt($str);
+    abstract function crypt($str, $as_array = false);
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return mixed
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    abstract function decrypt($str);
+    abstract function decrypt($str, $as_array = false);
 
 }
 

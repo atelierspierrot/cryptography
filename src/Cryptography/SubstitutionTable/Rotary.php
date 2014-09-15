@@ -11,11 +11,12 @@ namespace Cryptography\SubstitutionTable;
 
 use \Cryptography\Cryptography;
 use \Cryptography\Helper;
+use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class RotarySubstitutionTable
+class Rotary
     extends SimpleSubstitutionTable
 {
 

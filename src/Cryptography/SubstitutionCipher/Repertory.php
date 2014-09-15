@@ -23,8 +23,8 @@ use \Cryptography\Helper;
  *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class RepertorySubstitution
-    extends HomophonicSubstitution
+class Repertory
+    extends Homophonic
 {
 
     /**
@@ -75,10 +75,11 @@ class RepertorySubstitution
     /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function crypt($str)
+    public function crypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
@@ -91,18 +92,19 @@ class RepertorySubstitution
                 $r[] = $table[$l];
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return string
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      *
      * @TODO
      */
-    public function decrypt($str)
+    public function decrypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
@@ -115,7 +117,7 @@ class RepertorySubstitution
                 $r[] = array_search($l, $table);
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
 

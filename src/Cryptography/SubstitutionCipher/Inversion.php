@@ -10,7 +10,7 @@
 namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
-use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
+use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
  * Inversion substitution: "Atbash cipher"
@@ -18,7 +18,7 @@ use \Cryptography\SubstitutionTable\SimpleSubstitutionTable;
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
 class Inversion
-    extends SimpleSubstitution
+    extends Simple
 {
 
     /**

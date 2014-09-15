@@ -10,47 +10,53 @@
 namespace Cryptography\SubstitutionCipher;
 
 use \Cryptography\Cryptography;
-use \Cryptography\Helper;
-use \Cryptography\SubstitutionTable\SquareSubstitutionTable;
+use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
- * Square substitution: "Polybe square cipher" like
- *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class SquareSubstitution
-    extends SimpleSubstitution
+class Simple
+    extends AbstractSubstitutionCipher
 {
 
     /**
-     * @var SquareSubstitutionTable The substitution table object used to crypt/decrypt
+     * @var \Cryptography\SubstitutionTable\Simple The substitution table object used to crypt/decrypt
      */
     protected $substitution_table;
 
     /**
-     * @param null $plaintext_key
-     * @param array|int $flag
+     * @param string $plaintext_key
+     * @param array $cipher_key
+     * @param int $flag
      */
-    public function __construct($plaintext_key = null, $flag = Cryptography::PROCESS_ALL)
+    public function __construct($plaintext_key = '', $cipher_key = array(), $flag = Cryptography::PROCESS_ALL)
     {
-        if (is_null($plaintext_key)) {
-            $plaintext_key = Cryptography::ALPHABET_UPPER.Cryptography::SPACE;
-        }
         $this
             ->setSubstitutionTable(
-                new SquareSubstitutionTable($plaintext_key)
+                new SimpleSubstitutionTable($plaintext_key, $cipher_key)
             )
             ->setFlag($flag)
             ;
     }
 
     /**
+     * Debugging the substitution table used
+     *
+     * @return string
+     */
+    public function substitutionTableToString()
+    {
+        return $this->substitution_table->substitutionTableToString();
+    }
+
+    /**
      * Crypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to crypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function crypt($str)
+    public function crypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
@@ -63,39 +69,32 @@ class SquareSubstitution
                 $r[] = $table[$l];
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
 
     /**
      * Decrypt a string
      *
-     * @param $str
-     * @return mixed|string
+     * @param   string  $str        The string to decrypt
+     * @param   bool    $as_array   Get the result as an array or a string (default)
+     * @return  array|string
      */
-    public function decrypt($str)
+    public function decrypt($str, $as_array = false)
     {
         $str    = $this->_prepare($str);
         $table  = $this->substitution_table->getSubstitutionTable();
-        if ($this->flag & Cryptography::KEEP_SPACES) {
-            $parts  = explode(Cryptography::SPACE, $str);
-            $s      = array();
-            foreach ($parts as $part) {
-                $s      = array_merge($s, str_split($part, 2));
-                $s[]    = Cryptography::SPACE;
-            }
-        } else {
-            $s = str_split($str, 2);
-        }
-        $r = array();
+        $s      = str_split($str);
+        $r      = array();
         foreach ($s as $l) {
             if ($l==Cryptography::SPACE && ($this->flag & Cryptography::KEEP_SPACES)) {
                 $r[] = Cryptography::SPACE;
             } else {
-                $r[] = array_search((string) $l, $table);
+                $r[] = array_search($l, $table);
             }
         }
-        return implode('', $r);
+        return ($as_array ? $r : implode('', $r));
     }
+
 }
 
 // Endfile

@@ -10,6 +10,7 @@
 namespace Cryptography\SubstitutionTable;
 
 use \Cryptography\Helper;
+use \Cryptography\SubstitutionCipher\Simple as SimpleCipher;
 
 /**
  * @author  Piero Wbmstr <me@e-piwi.fr>
@@ -43,14 +44,37 @@ class TabulaRecta
     public function setPlaintextKey($str)
     {
         $this->plaintext_key = $str;
-        $r = array();
+    }
+
+    /**
+     * Get the full substitution table
+     */
+    public function getSubstitutionTable()
+    {
+        $str                        = $this->plaintext_key;
+        $this->substitution_table   = array();
         for ($i=0; $i<strlen($str); $i++) {
             if ($i>0) {
                 $str = Helper::rotate($str, 1);
             }
-            $r[] = str_split($str);
+            $this->substitution_table[$this->plaintext_key{$i}] = str_split($str);
         }
-        $this->substitution_table = $r;
+        return $this->substitution_table;
+    }
+
+    /**
+     * Get a substitution table entry
+     *
+     * @param int $pos
+     * @return string
+     */
+    public function getSubstitutionTableEntry($pos)
+    {
+        $str = $this->plaintext_key;
+        if ($pos != 0) {
+            $str = Helper::rotate($str, $pos);
+        }
+        return $str;
     }
 
     /**
@@ -61,8 +85,24 @@ class TabulaRecta
     public function substitutionTableToString()
     {
         return Helper::tableToString(
-            $this->substitution_table, array(), array(), '"Tabula Recta" Table'
+            $this->getSubstitutionTable(), array(), array(), '"Tabula Recta" Table'
         );
+    }
+
+    public function find($a, $b)
+    {
+        $pos    = strpos($this->plaintext_key, $a);
+        $key    = $this->getSubstitutionTableEntry($pos);
+        $table  = new SimpleCipher($this->plaintext_key, $key);
+        return $table->crypt($b);
+    }
+
+    public function retrieve($a, $b)
+    {
+        $pos    = strpos($this->plaintext_key, $b);
+        $key    = $this->getSubstitutionTableEntry($pos);
+        $table  = new SimpleCipher($this->plaintext_key, $key);
+        return $table->decrypt($a);
     }
 
 }
