@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Cryptography\SubstitutionCipher\VigenereCipher | Cryptography</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Cryptography</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../Cryptography/SubstitutionCipher.html">Cryptography\SubstitutionCipher</a>\VigenereCipher</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>VigenereCipher</strong>        extends <a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a></p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setSubstitutionTable">setSubstitutionTable</a>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)
+                    <p>Define the cipher substitution table object</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
+                    <p>Retrieve the cipher substitution object</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setFlag">setFlag</a>($flag)
+                    <p>Define the behavior flag of the object</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_process">process</a>()
+                    <p>Generic method to dispatch the "to do" action</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>($user_key, string $plaintext_key = Cryptography::ALPHABET_UPPER)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
+                    <p>Debugging the substitution table</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed|string
+                </td>
+                <td class="last">
+                    <a href="#method_crypt">crypt</a>($str)
+                    <p>Crypt a string</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed|string
+                </td>
+                <td class="last">
+                    <a href="#method_decrypt">decrypt</a>($str)
+                    <p>Decrypt a string</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setUserKey">setUserKey</a>($str)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_setSubstitutionTable">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 43</div>
+        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+    <strong>setSubstitutionTable</strong>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)</code>
+    </h3>
+    <div class="details">
+        <p>Define the cipher substitution table object</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
+                <td>$object</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getSubstitutionTable">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 54</div>
+        <code>                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
+    <strong>getSubstitutionTable</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Retrieve the cipher substitution object</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setFlag">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 65</div>
+        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+    <strong>setFlag</strong>($flag)</code>
+    </h3>
+    <div class="details">
+        <p>Define the behavior flag of the object</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$flag</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_process">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 76</div>
+        <code>                    mixed
+    <strong>process</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Generic method to dispatch the "to do" action</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___construct">
+        <div class="location">at line 27</div>
+        <code>                    
+    <strong>__construct</strong>($user_key, string $plaintext_key = Cryptography::ALPHABET_UPPER)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$user_key</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$plaintext_key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_substitutionTableToString">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a> at line 85</div>
+        <code>                    string
+    <strong>substitutionTableToString</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Debugging the substitution table</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_crypt">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a> at line 106</div>
+        <code>                    mixed|string
+    <strong>crypt</strong>($str)</code>
+    </h3>
+    <div class="details">
+        <p>Crypt a string</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$str</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed|string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_decrypt">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/PolyAlphabeticSubstitution.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\PolyAlphabeticSubstitution">PolyAlphabeticSubstitution</abbr></a> at line 146</div>
+        <code>                    mixed|string
+    <strong>decrypt</strong>($str)</code>
+    </h3>
+    <div class="details">
+        <p>Decrypt a string</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$str</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed|string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setUserKey">
+        <div class="location">at line 36</div>
+        <code>                    
+    <strong>setUserKey</strong>($str)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$str</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
