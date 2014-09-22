@@ -9,9 +9,6 @@
 #
 ########################################################################################
 
-### Hack to allow keeping an empty directory
-!.gitkeep
-
 ### OS & software files
 .DS_Store
 .AppleDouble
@@ -59,3 +56,10 @@ phpdoc/*
 #dev/*
 #build/*
 #src.*/*
+
+# specific for the package, don't put rainbow tables under VCS
+src/Cryptography/Resources/rainbow-*
+
+# Hack to allow keeping an empty directory
+# this one HAS to keep last !!
+!.gitkeep
