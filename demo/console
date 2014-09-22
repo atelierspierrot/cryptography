@@ -146,7 +146,7 @@ var_export($t);
 //var_export($c);
 //*/
 
-//*/ // StringCracker
+/*/ // StringCracker
 $c = new \Cryptography\Tools\StringCracker('md5',
     'ABCDEF'
 //    \Cryptography\Cryptography::ALPHABET_UPPER
@@ -160,6 +160,22 @@ $v = $c->setClosure('sha1')->crack($letters_sha1);
 echo "=> found: ".$v.PHP_EOL;
 //var_export($c);
 //*/
+
+
+//*/ // Rainbow Tables
+$rt = new \Cryptography\Tools\RainbowTable\FileGenerator('md5', \Cryptography\Cryptography::ALPHABET_LOWER);
+$ok = $rt->generate();
+echo $rt->getRainbowFile().PHP_EOL;
+var_export($ok);
+//var_export($rt);
+
+$rt = new \Cryptography\Tools\RainbowTable\FileGenerator('sha1', \Cryptography\Cryptography::ALPHABET_LOWER);
+$ok = $rt->generate();
+echo $rt->getRainbowFile().PHP_EOL;
+var_export($ok);
+//var_export($rt);
+//*/
+
 exit('yo');
 $cracker = new \Cryptography\Preset\CryptedCracker();
 // MD5
