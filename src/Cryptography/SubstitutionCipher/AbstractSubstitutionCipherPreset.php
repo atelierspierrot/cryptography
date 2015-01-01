@@ -23,47 +23,37 @@
 
 namespace Cryptography\SubstitutionCipher;
 
-use \Cryptography\Cryptography;
-use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
-
 /**
- * Inversion substitution: "Atbash cipher"
- *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class Inversion
-    extends Simple
+abstract class AbstractSubstitutionCipherPreset
 {
 
     /**
-     * @param null $plaintext_key
-     * @param array|int $flag
+     * @var \Cryptography\SubstitutionCipher\AbstractSubstitutionCipher
      */
-    public function __construct($plaintext_key = null, $flag = Cryptography::PROCESS_ALL)
+    protected $substitution;
+
+    /**
+     * Crypt a string with the preset
+     *
+     * @param $str
+     * @return mixed
+     */
+    public function crypt($str)
     {
-        if (is_null($plaintext_key)) {
-            $plaintext_key = Cryptography::ALPHABET_UPPER.Cryptography::SPACE;
-        }
-        $this
-            ->setSubstitutionTable(
-                new SimpleSubstitutionTable($plaintext_key)
-            )
-            ->setFlag($flag)
-        ;
+        return $this->substitution->crypt($str);
     }
 
     /**
-     * Reset the substitution table to original form
+     * Decrypt a string with the preset
      *
-     * @return $this
+     * @param $str
+     * @return mixed
      */
-    protected function _reset()
+    public function decrypt($str)
     {
-        parent::_reset();
-        $this->substitution_table->setSubstitutions(
-            array(str_split(strrev($this->substitution_table->getPlaintextKey())))
-        );
-        return $this;
+        return $this->substitution->decrypt($str);
     }
 
 }
