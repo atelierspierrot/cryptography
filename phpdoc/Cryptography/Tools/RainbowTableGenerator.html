@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Cryptography\SubstitutionTable\TabulaRecta | Cryptography</title>
+    <title>Cryptography\Tools\RainbowTableGenerator | Cryptography</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -16,7 +16,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Cryptography_SubstitutionTable_TabulaRecta" data-root-path="../../">
+    <body id="class" data-name="class:Cryptography_Tools_RainbowTableGenerator" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -61,19 +61,19 @@
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
                                                             <li><a href="../../Cryptography.html">Cryptography</a></li>
-                                        <li><a href="../../Cryptography/SubstitutionTable.html">SubstitutionTable</a></li>
+                                        <li><a href="../../Cryptography/Tools.html">Tools</a></li>
     
-                <li>TabulaRecta</li>
+                <li>RainbowTableGenerator</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
-        <h1>TabulaRecta</h1>
+        <h1>RainbowTableGenerator</h1>
     </div>
 
     <p>    class
-    <strong>TabulaRecta</strong></p>
+    <strong>RainbowTableGenerator</strong></p>
 
     
     
@@ -87,7 +87,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($plaintext_key)
+                    <a href="#method___construct">__construct</a>($closure = &#039;md5&#039;, $min_length = 1, $max_length = null)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -97,43 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setPlaintextKey">setPlaintextKey</a>($str)
-                                            <p>Define the plain text key and construct the substitutions table</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
-                                            <p>Get the full substitution table</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTableEntry">getSubstitutionTableEntry</a>(int $pos)
-                                            <p>Get a substitution table entry</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
-                                            <p>Debugging</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_find">find</a>($a, $b)
+                    <a href="#method_setClosure">setClosure</a>($fct)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -143,7 +107,37 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_retrieve">retrieve</a>($a, $b)
+                    <a href="#method_setMinLength">setMinLength</a>($min_length)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMaxLength">setMaxLength</a>($max_length)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_generate">generate</a>($characters = array())
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_doProcess">doProcess</a>($str, <abbr title="Cryptography\Tools\Closure">Closure</abbr> $closure = null)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -156,9 +150,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 48</div>
+        <div class="location">at line 40</div>
         <code>                    
-    <strong>__construct</strong>($plaintext_key)</code>
+    <strong>__construct</strong>($closure = &#039;md5&#039;, $min_length = 1, $max_length = null)</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -167,7 +161,19 @@
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$plaintext_key</td>
+                <td>$closure</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$min_length</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$max_length</td>
                 <td>
 </td>
             </tr>
@@ -181,14 +187,116 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setPlaintextKey">
-        <div class="location">at line 58</div>
+                    <h3 id="method_setClosure">
+        <div class="location">at line 52</div>
         <code>                    
-    <strong>setPlaintextKey</strong>($str)</code>
+    <strong>setClosure</strong>($fct)</code>
     </h3>
     <div class="details">
-                    <div class="method-description">
-                                    <p>Define the plain text key and construct the substitutions table</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$fct</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMinLength">
+        <div class="location">at line 91</div>
+        <code>                    
+    <strong>setMinLength</strong>($min_length)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$min_length</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMaxLength">
+        <div class="location">at line 97</div>
+        <code>                    
+    <strong>setMaxLength</strong>($max_length)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$max_length</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_generate">
+        <div class="location">at line 103</div>
+        <code>                    
+    <strong>generate</strong>($characters = array())</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$characters</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_doProcess">
+        <div class="location">at line 109</div>
+        <code>                    
+    <strong>doProcess</strong>($str, <abbr title="Cryptography\Tools\Closure">Closure</abbr> $closure = null)</code>
+    </h3>
+    <div class="details">
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -199,149 +307,9 @@
                 <td>
 </td>
             </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutionTable">
-        <div class="location">at line 66</div>
-        <code>                    
-    <strong>getSubstitutionTable</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Get the full substitution table</p>                                </div>
-                <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutionTableEntry">
-        <div class="location">at line 85</div>
-        <code>                    string
-    <strong>getSubstitutionTableEntry</strong>(int $pos)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Get a substitution table entry</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
                     <tr>
-                <td>int</td>
-                <td>$pos</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_substitutionTableToString">
-        <div class="location">at line 99</div>
-        <code>                    string
-    <strong>substitutionTableToString</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Debugging</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_find">
-        <div class="location">at line 106</div>
-        <code>                    
-    <strong>find</strong>($a, $b)</code>
-    </h3>
-    <div class="details">
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$a</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$b</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_retrieve">
-        <div class="location">at line 114</div>
-        <code>                    
-    <strong>retrieve</strong>($a, $b)</code>
-    </h3>
-    <div class="details">
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$a</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$b</td>
+                <td><abbr title="Cryptography\Tools\Closure">Closure</abbr></td>
+                <td>$closure</td>
                 <td>
 </td>
             </tr>

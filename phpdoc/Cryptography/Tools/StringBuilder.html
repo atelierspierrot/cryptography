@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Cryptography\SubstitutionTable\AbstractSubstitutionTable | Cryptography</title>
+    <title>Cryptography\Tools\StringBuilder | Cryptography</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -16,7 +16,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Cryptography_SubstitutionTable_AbstractSubstitutionTable" data-root-path="../../">
+    <body id="class" data-name="class:Cryptography_Tools_StringBuilder" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -61,19 +61,19 @@
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
                                                             <li><a href="../../Cryptography.html">Cryptography</a></li>
-                                        <li><a href="../../Cryptography/SubstitutionTable.html">SubstitutionTable</a></li>
+                                        <li><a href="../../Cryptography/Tools.html">Tools</a></li>
     
-                <li>AbstractSubstitutionTable</li>
+                <li>StringBuilder</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
-        <h1>AbstractSubstitutionTable</h1>
+        <h1>StringBuilder</h1>
     </div>
 
-    <p>abstract     class
-    <strong>AbstractSubstitutionTable</strong></p>
+    <p>    class
+    <strong>StringBuilder</strong></p>
 
     
     
@@ -87,71 +87,109 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $plaintext_key = &#039;&#039;, array $substitution_table = array())
-                                            <p>Load the plain text key and substitutions table</p>                </div>
+                    <a href="#method___construct">__construct</a>($characters, $flag = Cryptography::TYPE_COMBINATION)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setPlaintextKey">setPlaintextKey</a>($str)
-                                            <p>Define the plain text key</p>                </div>
+                    <a href="#method_setFlag">setFlag</a>($flag)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setSubstitutions">setSubstitutions</a>(array $table)
-                                            <p>Define the substitutions table</p>                </div>
+                    <a href="#method_setPlaintextKeys">setPlaintextKeys</a>(array $characters)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_addSubstitution">addSubstitution</a>($str)
-                                            <p>Add an entry to the substitutions table</p>                </div>
+                    <a href="#method_process">process</a>($limit)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
-                                            <p>Debugging the substitutions table</p>                </div>
+                    <a href="#method_getCombinationNumber">getCombinationNumber</a>()
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getPlaintextKey">getPlaintextKey</a>()
-                                            <p>Must return the original plain text key</p>                </div>
+                    <a href="#method_processCombination">processCombination</a>($limit)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getSubstitutions">getSubstitutions</a>()
-                                            <p>Must return the substitutions table</p>                </div>
+                    <a href="#method_doProcessCombination">doProcessCombination</a>($i)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>(int $action = Cryptography::CRYPT)
-                                            <p>Must return a table of correspondence between plain text key and substitutions items</p>                </div>
+                    <a href="#method_getPermutationNumber">getPermutationNumber</a>()
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_processPermutation">processPermutation</a>($limit)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_doProcessPermutation">doProcessPermutation</a>($items)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_doProcessPermutationRun">doProcessPermutationRun</a>($items, array $results = array(), array $perms = array())
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -162,108 +200,30 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 51</div>
+        <div class="location">at line 44</div>
         <code>                    
-    <strong>__construct</strong>(string $plaintext_key = &#039;&#039;, array $substitution_table = array())</code>
+    <strong>__construct</strong>($characters, $flag = Cryptography::TYPE_COMBINATION)</code>
     </h3>
     <div class="details">
-                    <div class="method-description">
-                                    <p>Load the plain text key and substitutions table</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$plaintext_key</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$substitution_table</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setPlaintextKey">
-        <div class="location">at line 66</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
-    <strong>setPlaintextKey</strong>($str)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Define the plain text key</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$str</td>
+                <td>$characters</td>
                 <td>
 </td>
             </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setSubstitutions">
-        <div class="location">at line 78</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
-    <strong>setSubstitutions</strong>(array $table)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Define the substitutions table</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
                     <tr>
-                <td>array</td>
-                <td>$table</td>
+                <td></td>
+                <td>$flag</td>
                 <td>
 </td>
             </tr>
             </table>
 
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -271,37 +231,25 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_addSubstitution">
-        <div class="location">at line 90</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
-    <strong>addSubstitution</strong>($str)</code>
+                    <h3 id="method_setFlag">
+        <div class="location">at line 57</div>
+        <code>                    
+    <strong>setFlag</strong>($flag)</code>
     </h3>
     <div class="details">
-                    <div class="method-description">
-                                    <p>Add an entry to the substitutions table</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$str</td>
+                <td>$flag</td>
                 <td>
 </td>
             </tr>
             </table>
 
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -309,120 +257,234 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_substitutionTableToString">
-        <div class="location">at line 101</div>
-        <code>                    string
-    <strong>substitutionTableToString</strong>()</code>
+                    <h3 id="method_setPlaintextKeys">
+        <div class="location">at line 63</div>
+        <code>                    
+    <strong>setPlaintextKeys</strong>(array $characters)</code>
     </h3>
     <div class="details">
-                    <div class="method-description">
-                                    <p>Debugging the substitutions table</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getPlaintextKey">
-        <div class="location">at line 113</div>
-        <code>    abstract                mixed
-    <strong>getPlaintextKey</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Must return the original plain text key</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>mixed</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutions">
-        <div class="location">at line 120</div>
-        <code>    abstract                mixed
-    <strong>getSubstitutions</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Must return the substitutions table</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>mixed</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutionTable">
-        <div class="location">at line 128</div>
-        <code>    abstract                mixed
-    <strong>getSubstitutionTable</strong>(int $action = Cryptography::CRYPT)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Must return a table of correspondence between plain text key and substitutions items</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>int</td>
-                <td>$action</td>
+                <td>array</td>
+                <td>$characters</td>
                 <td>
 </td>
             </tr>
             </table>
 
             
-                            <h4>Return Value</h4>
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_process">
+        <div class="location">at line 70</div>
+        <code>                    
+    <strong>process</strong>($limit)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-        <tr>
-            <td>mixed</td>
-            <td>
+                    <tr>
+                <td></td>
+                <td>$limit</td>
+                <td>
 </td>
-        </tr>
-    </table>
+            </tr>
+            </table>
 
             
             
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCombinationNumber">
+        <div class="location">at line 94</div>
+        <code>                    
+    <strong>getCombinationNumber</strong>()</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_processCombination">
+        <div class="location">at line 100</div>
+        <code>                    
+    <strong>processCombination</strong>($limit)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$limit</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_doProcessCombination">
+        <div class="location">at line 112</div>
+        <code>                    
+    <strong>doProcessCombination</strong>($i)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$i</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPermutationNumber">
+        <div class="location">at line 126</div>
+        <code>                    
+    <strong>getPermutationNumber</strong>()</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_processPermutation">
+        <div class="location">at line 131</div>
+        <code>                    
+    <strong>processPermutation</strong>($limit)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$limit</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_doProcessPermutation">
+        <div class="location">at line 137</div>
+        <code>                    
+    <strong>doProcessPermutation</strong>($items)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$items</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_doProcessPermutationRun">
+        <div class="location">at line 149</div>
+        <code>                    
+    <strong>doProcessPermutationRun</strong>($items, array $results = array(), array $perms = array())</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$items</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$results</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$perms</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://stackoverflow.com/questions/5506888/permutations-all-possible-sets-of-numbers</td>
+                <td></td>
+            </tr>
+            </table>
+
                     </div>
     </div>
 

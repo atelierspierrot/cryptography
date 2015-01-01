@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Cryptography\SubstitutionTable\TabulaRecta | Cryptography</title>
+    <title>Cryptography\Analysis\Frequency | Cryptography</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -16,7 +16,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Cryptography_SubstitutionTable_TabulaRecta" data-root-path="../../">
+    <body id="class" data-name="class:Cryptography_Analysis_Frequency" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -61,23 +61,37 @@
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
                                                             <li><a href="../../Cryptography.html">Cryptography</a></li>
-                                        <li><a href="../../Cryptography/SubstitutionTable.html">SubstitutionTable</a></li>
+                                        <li><a href="../../Cryptography/Analysis.html">Analysis</a></li>
     
-                <li>TabulaRecta</li>
+                <li>Frequency</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
-        <h1>TabulaRecta</h1>
+        <h1>Frequency</h1>
     </div>
 
     <p>    class
-    <strong>TabulaRecta</strong></p>
+    <strong>Frequency</strong>        extends <a href="../../Cryptography/Analysis/AbstractAnalyzer.html"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></p>
 
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_analysis">
+                                                                                array
+                </td>
+                <td>$analysis</td>
+                <td class="last">
+</td>
+                <td><small>from&nbsp;<a href="../../Cryptography/Analysis/AbstractAnalyzer.html#property_analysis"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></small></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -87,63 +101,47 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($plaintext_key)
+                    <a href="#method___construct">__construct</a>(int $analysis_type = Cryptography::SCOPE_WORD, string $allowed_characters = Cryptography::ALPHABET_UPPER)
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method___construct"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setPlaintextKey">setPlaintextKey</a>($str)
-                                            <p>Define the plain text key and construct the substitutions table</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
-                                            <p>Get the full substitution table</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTableEntry">getSubstitutionTableEntry</a>(int $pos)
-                                            <p>Get a substitution table entry</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
-                                            <p>Debugging</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_find">find</a>($a, $b)
+                    <a href="#method_setAnalysisType">setAnalysisType</a>($analysis_type)
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_setAnalysisType"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_retrieve">retrieve</a>($a, $b)
+                    <a href="#method_setAllowedCharacters">setAllowedCharacters</a>($allowed_characters)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_setAllowedCharacters"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_prepareString">prepareString</a>($str)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_prepareString"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_process">process</a>($str)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -156,9 +154,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 48</div>
+        <div class="location">in <a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method___construct"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a> at line 59</div>
         <code>                    
-    <strong>__construct</strong>($plaintext_key)</code>
+    <strong>__construct</strong>(int $analysis_type = Cryptography::SCOPE_WORD, string $allowed_characters = Cryptography::ALPHABET_UPPER)</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -166,8 +164,14 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>$plaintext_key</td>
+                <td>int</td>
+                <td>$analysis_type</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$allowed_characters</td>
                 <td>
 </td>
             </tr>
@@ -181,14 +185,64 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setPlaintextKey">
-        <div class="location">at line 58</div>
+                    <h3 id="method_setAnalysisType">
+        <div class="location">in <a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_setAnalysisType"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a> at line 69</div>
         <code>                    
-    <strong>setPlaintextKey</strong>($str)</code>
+    <strong>setAnalysisType</strong>($analysis_type)</code>
     </h3>
     <div class="details">
-                    <div class="method-description">
-                                    <p>Define the plain text key and construct the substitutions table</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$analysis_type</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAllowedCharacters">
+        <div class="location">in <a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_setAllowedCharacters"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a> at line 75</div>
+        <code>                    
+    <strong>setAllowedCharacters</strong>($allowed_characters)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$allowed_characters</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_prepareString">
+        <div class="location">in <a href="../../Cryptography/Analysis/AbstractAnalyzer.html#method_prepareString"><abbr title="Cryptography\Analysis\AbstractAnalyzer">AbstractAnalyzer</abbr></a> at line 93</div>
+        <code>                    
+    <strong>prepareString</strong>($str)</code>
+    </h3>
+    <div class="details">
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -209,92 +263,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getSubstitutionTable">
-        <div class="location">at line 66</div>
+                    <h3 id="method_process">
+        <div class="location">at line 36</div>
         <code>                    
-    <strong>getSubstitutionTable</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Get the full substitution table</p>                                </div>
-                <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutionTableEntry">
-        <div class="location">at line 85</div>
-        <code>                    string
-    <strong>getSubstitutionTableEntry</strong>(int $pos)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Get a substitution table entry</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>int</td>
-                <td>$pos</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_substitutionTableToString">
-        <div class="location">at line 99</div>
-        <code>                    string
-    <strong>substitutionTableToString</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Debugging</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_find">
-        <div class="location">at line 106</div>
-        <code>                    
-    <strong>find</strong>($a, $b)</code>
+    <strong>process</strong>($str)</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -303,45 +275,7 @@
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$a</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$b</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_retrieve">
-        <div class="location">at line 114</div>
-        <code>                    
-    <strong>retrieve</strong>($a, $b)</code>
-    </h3>
-    <div class="details">
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$a</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$b</td>
+                <td>$str</td>
                 <td>
 </td>
             </tr>

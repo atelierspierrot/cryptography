@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Cryptography\SubstitutionCipher\Rotation | Cryptography</title>
+    <title>Cryptography\SubstitutionCipher\Affine | Cryptography</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -16,7 +16,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Cryptography_SubstitutionCipher_Rotation" data-root-path="../../">
+    <body id="class" data-name="class:Cryptography_SubstitutionCipher_Affine" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -63,20 +63,20 @@
                                                             <li><a href="../../Cryptography.html">Cryptography</a></li>
                                         <li><a href="../../Cryptography/SubstitutionCipher.html">SubstitutionCipher</a></li>
     
-                <li>Rotation</li>
+                <li>Affine</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
-        <h1>Rotation</h1>
+        <h1>Affine</h1>
     </div>
 
     <p>    class
-    <strong>Rotation</strong>        extends <a href="../../Cryptography/SubstitutionCipher/Simple.html"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a></p>
+    <strong>Affine</strong>        extends <a href="../../Cryptography/SubstitutionCipher/Simple.html"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a></p>
 
             <div class="description">
-            <p>Rotation substitution: "Caesar cipher"</p>                    </div>
+            <p>This use an affine function to calculate the cipher encoding:</p>            <p>y = a * x + b</p>        </div>
     
     
     
@@ -125,7 +125,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $plaintext_key, array $rotation_value, int $flag = Cryptography::PROCESS_ALL)
+                    <a href="#method___construct">__construct</a>(string $a, array $b, null $plaintext_key = null, int $flag = Cryptography::PROCESS_ALL)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -146,7 +146,7 @@
                 <div class="col-md-8 type">
                     <a href="#method_crypt">crypt</a>(string $str, bool $as_array = false)
                                             <p>Crypt a string</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/Simple.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a></small></div>
+                <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -155,15 +155,6 @@
                 <div class="col-md-8 type">
                     <a href="#method_decrypt">decrypt</a>(string $str, bool $as_array = false)
                                             <p>Decrypt a string</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/Simple.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    static&nbsp;mixed|string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_rot13">rot13</a>($str)
-                                            <p>Shortcut or <code>ROT13</code></p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -304,9 +295,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 49</div>
+        <div class="location">at line 67</div>
         <code>                    
-    <strong>__construct</strong>(string $plaintext_key, array $rotation_value, int $flag = Cryptography::PROCESS_ALL)</code>
+    <strong>__construct</strong>(string $a, array $b, null $plaintext_key = null, int $flag = Cryptography::PROCESS_ALL)</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -315,13 +306,19 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$plaintext_key</td>
+                <td>$a</td>
                 <td>
 </td>
             </tr>
                     <tr>
                 <td>array</td>
-                <td>$rotation_value</td>
+                <td>$b</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>null</td>
+                <td>$plaintext_key</td>
                 <td>
 </td>
             </tr>
@@ -335,6 +332,15 @@
 
             
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>if <code>$a</code> or <code>$b</code> does not fit requirements</td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>
@@ -369,7 +375,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_crypt">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/Simple.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a> at line 73</div>
+        <div class="location">at line 152</div>
         <code>                    array|string
     <strong>crypt</strong>(string $str, bool $as_array = false)</code>
     </h3>
@@ -411,7 +417,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_decrypt">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/Simple.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\Simple">Simple</abbr></a> at line 96</div>
+        <div class="location">at line 172</div>
         <code>                    array|string
     <strong>decrypt</strong>(string $str, bool $as_array = false)</code>
     </h3>
@@ -440,44 +446,6 @@
                     <table class="table table-condensed">
         <tr>
             <td>array|string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_rot13">
-        <div class="location">at line 94</div>
-        <code>        static            mixed|string
-    <strong>rot13</strong>($str)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Shortcut or <code>ROT13</code></p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$str</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>mixed|string</td>
             <td>
 </td>
         </tr>

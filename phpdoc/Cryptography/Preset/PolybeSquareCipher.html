@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Cryptography\SubstitutionCipher\AbstractSubstitutionCipher | Cryptography</title>
+    <title>Cryptography\Preset\PolybeSquareCipher | Cryptography</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -16,7 +16,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Cryptography_SubstitutionCipher_AbstractSubstitutionCipher" data-root-path="../../">
+    <body id="class" data-name="class:Cryptography_Preset_PolybeSquareCipher" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -61,19 +61,19 @@
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
                                                             <li><a href="../../Cryptography.html">Cryptography</a></li>
-                                        <li><a href="../../Cryptography/SubstitutionCipher.html">SubstitutionCipher</a></li>
+                                        <li><a href="../../Cryptography/Preset.html">Preset</a></li>
     
-                <li>AbstractSubstitutionCipher</li>
+                <li>PolybeSquareCipher</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
-        <h1>AbstractSubstitutionCipher</h1>
+        <h1>PolybeSquareCipher</h1>
     </div>
 
-    <p>abstract     class
-    <strong>AbstractSubstitutionCipher</strong></p>
+    <p>    class
+    <strong>PolybeSquareCipher</strong>        extends <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipherPreset.html"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset">AbstractSubstitutionCipherPreset</abbr></a></p>
 
     
     
@@ -84,38 +84,30 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+                    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setSubstitutionTable">setSubstitutionTable</a>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)
-                                            <p>Define the cipher substitution table object</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
-                                            <p>Retrieve the cipher substitution object</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setFlag">setFlag</a>($flag)
-                                            <p>Define the behavior flag of the object</p>                </div>
-                <div class="col-md-2"></div>
+                    <a href="#method_crypt">crypt</a>($str)
+                                            <p>Crypt a string with the preset</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipherPreset.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset">AbstractSubstitutionCipherPreset</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_process">process</a>()
-                                            <p>Generic method to dispatch the "to do" action</p>                </div>
+                    <a href="#method_decrypt">decrypt</a>($str)
+                                            <p>Decrypt a string with the preset</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipherPreset.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset">AbstractSubstitutionCipherPreset</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>($plaintext_key = Cryptography::ALPHABET_UPPER)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -125,118 +117,26 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_setSubstitutionTable">
-        <div class="location">at line 57</div>
-        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
-    <strong>setSubstitutionTable</strong>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)</code>
+                    <h3 id="method_crypt">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipherPreset.html#method_crypt"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset">AbstractSubstitutionCipherPreset</abbr></a> at line 43</div>
+        <code>                    mixed
+    <strong>crypt</strong>($str)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Define the cipher substitution table object</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
-                <td>$object</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSubstitutionTable">
-        <div class="location">at line 68</div>
-        <code>                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
-    <strong>getSubstitutionTable</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Retrieve the cipher substitution object</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setFlag">
-        <div class="location">at line 79</div>
-        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
-    <strong>setFlag</strong>($flag)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Define the behavior flag of the object</p>                                </div>
+                                    <p>Crypt a string with the preset</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$flag</td>
+                <td>$str</td>
                 <td>
 </td>
             </tr>
             </table>
 
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_process">
-        <div class="location">at line 90</div>
-        <code>                    mixed
-    <strong>process</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Generic method to dispatch the "to do" action</p>                                </div>
-                <div class="tags">
             
                             <h4>Return Value</h4>
 
@@ -248,6 +148,70 @@
         </tr>
     </table>
 
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_decrypt">
+        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipherPreset.html#method_decrypt"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset">AbstractSubstitutionCipherPreset</abbr></a> at line 54</div>
+        <code>                    mixed
+    <strong>decrypt</strong>($str)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Decrypt a string with the preset</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$str</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 37</div>
+        <code>                    
+    <strong>__construct</strong>($plaintext_key = Cryptography::ALPHABET_UPPER)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$plaintext_key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
             
             
                     </div>
