@@ -21,51 +21,43 @@
  * <http://github.com/atelierspierrot/cryptography>.
  */
 
-namespace Cryptography\SubstitutionCipher;
+namespace Cryptography\Preset;
 
 use \Cryptography\Cryptography;
-use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
+use \Cryptography\Helper;
+use \Cryptography\Tools\StringCracker;
 
 /**
- * Inversion substitution: "Atbash cipher"
- *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class Inversion
-    extends Simple
+class CryptedCracker
 {
 
-    /**
-     * @param null $plaintext_key
-     * @param array|int $flag
-     */
-    public function __construct($plaintext_key = null, $flag = Cryptography::PROCESS_ALL)
+    protected $crypted;
+
+    public function __construct($crypted)
     {
-        if (is_null($plaintext_key)) {
-            $plaintext_key = Cryptography::ALPHABET_UPPER.Cryptography::SPACE;
-        }
         $this
-            ->setSubstitutionTable(
-                new SimpleSubstitutionTable($plaintext_key)
-            )
-            ->setFlag($flag)
-        ;
+            ->setCryptedString($crypted)
+            ;
     }
 
-    /**
-     * Reset the substitution table to original form
-     *
-     * @return $this
-     */
-    protected function _reset()
+    public function setCryptedString($str)
     {
-        parent::_reset();
-        $this->substitution_table->setSubstitutions(
-            array(str_split(strrev($this->substitution_table->getPlaintextKey())))
-        );
+        $this->crypted = $str;
         return $this;
     }
 
+    public function processAllHashes()
+    {
+        $cracker = new StringCracker();
+        foreach (hash_algos() as $hash) {
+            if (($c = $cracker->crack($this->crypted, $hash))!==null) {
+                return $c;
+            }
+        }
+        return null;
+    }
 }
 
 // Endfile

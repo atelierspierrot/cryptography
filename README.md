@@ -69,7 +69,7 @@ The latest version of this documentation is available online at <http://docs.ate
 
 >    http://github.com/atelierspierrot/cryptography
 
->    Copyleft 2014, Pierre Cassat and contributors
+>    Copyleft 2014-2015, Pierre Cassat and contributors
 
 >    Licensed under the GPL Version 3 license.
 

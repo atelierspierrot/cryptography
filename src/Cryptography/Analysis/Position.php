@@ -21,48 +21,38 @@
  * <http://github.com/atelierspierrot/cryptography>.
  */
 
-namespace Cryptography\SubstitutionCipher;
+namespace Cryptography\Analysis;
 
 use \Cryptography\Cryptography;
-use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
+use \Cryptography\Helper;
 
 /**
- * Inversion substitution: "Atbash cipher"
- *
  * @author  Piero Wbmstr <me@e-piwi.fr>
  */
-class Inversion
-    extends Simple
+class Position
+    extends AbstractAnalyzer
 {
 
-    /**
-     * @param null $plaintext_key
-     * @param array|int $flag
-     */
-    public function __construct($plaintext_key = null, $flag = Cryptography::PROCESS_ALL)
+    public function process($str)
     {
-        if (is_null($plaintext_key)) {
-            $plaintext_key = Cryptography::ALPHABET_UPPER.Cryptography::SPACE;
-        }
-        $this
-            ->setSubstitutionTable(
-                new SimpleSubstitutionTable($plaintext_key)
-            )
-            ->setFlag($flag)
-        ;
-    }
+        $str = $this->prepareString($str);
 
-    /**
-     * Reset the substitution table to original form
-     *
-     * @return $this
-     */
-    protected function _reset()
-    {
-        parent::_reset();
-        $this->substitution_table->setSubstitutions(
-            array(str_split(strrev($this->substitution_table->getPlaintextKey())))
-        );
+        $this->analysis = array();
+        switch ($this->analysis_type) {
+            case Cryptography::SCOPE_LETTER:
+                $res = count_chars($str, 1);
+                foreach ($res as $i=>$v) {
+                    $this->analysis[chr($i)][] = $v;
+                }
+                break;
+            case Cryptography::SCOPE_WORD:
+                $parts = explode(' ', $str);
+                foreach ($parts as $i=>$part) {
+                    $this->analysis[$part][] = $i;
+                }
+                break;
+        }
+
         return $this;
     }
 
