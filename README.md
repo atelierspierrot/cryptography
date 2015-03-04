@@ -38,18 +38,21 @@ from Github.
 Then, to use the package classes, you just need to register the `Cryptography` namespace directory
 using the [SplClassLoader](https://gist.github.com/jwage/221634) or any other custom autoloader:
 
-    require_once '.../src/SplClassLoader.php'; // if required, a copy is proposed in the package
-    $classLoader = new SplClassLoader('Cryptography', '/path/to/package/src');
-    $classLoader->register();
+```php
+require_once '.../src/SplClassLoader.php'; // if required, a copy is proposed in the package
+$classLoader = new SplClassLoader('Cryptography', '/path/to/package/src');
+$classLoader->register();
+```
 
 If you are a [Composer](http://getcomposer.org/) user, just add the package to your requirements
 in your `composer.json`:
 
-    "require": {
-        ...
-        "atelierspierrot/cryptography": "dev-master"
-    }
-
+```json
+"require": {
+    "your/deps" : "*",
+    "atelierspierrot/cryptography": "dev-master"
+}
+```
 
 ## Development
 
