@@ -4,7 +4,7 @@
     "description": "A set of PHP classes to crypt and uncrypt.",
     "keywords": [ "php", "cryptography" ],
     "homepage": "http://github.com/atelierspierrot/cryptography",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "authors": [{
         "name": "Les Ateliers Pierrot & contributors",
         "email": "contact@ateliers-pierrot.fr",
