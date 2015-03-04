@@ -1,6 +1,7 @@
 Cryptography
 ============
 
+[![documentation](http://img.ateliers-pierrot-static.fr/readthe-doc.png)](http://docs.ateliers-pierrot.fr/cryptography/)
 A set of PHP classes to crypt and uncrypt.
 
 
