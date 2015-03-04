@@ -23,9 +23,9 @@ $iterator = Finder::create()
 ;
 
 $options = array(
-    'title'                => 'Patterns',
+    'title'                => 'Cryptography',
     'build_dir'            => __DIR__.'/phpdoc',
-    'cache_dir'            => __DIR__.'/../tmp/cache/patterns',
+    'cache_dir'            => __DIR__.'/../tmp/cache/cryptography',
     'default_opened_level' => 2,
 );
 

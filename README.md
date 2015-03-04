@@ -1,6 +1,7 @@
 Cryptography
 ============
 
+[![documentation](http://img.ateliers-pierrot-static.fr/readthe-doc.png)](http://docs.ateliers-pierrot.fr/cryptography/)
 A set of PHP classes to crypt and uncrypt.
 
 
@@ -69,14 +70,14 @@ The latest version of this documentation is available online at <http://docs.ate
 
 >    http://github.com/atelierspierrot/cryptography
 
->    Copyleft 2014-2015, Pierre Cassat and contributors
+>    Copyright 2014-2015, Pierre Cassat and contributors
 
->    Licensed under the GPL Version 3 license.
+>    Licensed under the Apache 2.0 license.
 
->    http://opensource.org/licenses/GPL-3.0
+>    http://www.apache.org/licenses/LICENSE-2.0
 
 >    ----
 
 >    Les Ateliers Pierrot - Paris, France
 
->    <www.ateliers-pierrot.fr> - <contact@ateliers-pierrot.fr>
+>    <http://www.ateliers-pierrot.fr/> - <contact@ateliers-pierrot.fr>
