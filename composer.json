@@ -18,8 +18,8 @@
         "atelierspierrot/maths": "1.0.*@dev"
     },
     "require-dev": { 
-        "sami/sami": "dev-master",
-        "phpmd/phpmd" : "1.4.*"
+        "sami/sami": "@stable",
+        "phpmd/phpmd" : "@stable"
     },
     "autoload": { "psr-0": {  "Cryptography": "src" } },
     "extra": {
