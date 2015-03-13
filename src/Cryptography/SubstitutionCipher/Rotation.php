@@ -29,7 +29,7 @@ use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 /**
  * Rotation substitution: "Caesar cipher"
  *
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Rotation
     extends Simple

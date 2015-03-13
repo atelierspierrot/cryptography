@@ -27,7 +27,7 @@ use \Cryptography\SubstitutionCipher\Rotation;
 use \Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class CaesarCipher
     extends AbstractSubstitutionCipherPreset

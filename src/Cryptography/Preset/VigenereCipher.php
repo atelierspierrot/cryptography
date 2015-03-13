@@ -29,7 +29,7 @@ use \Cryptography\SubstitutionTable\TabulaRecta;
 use \Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class VigenereCipher
     extends AbstractSubstitutionCipherPreset

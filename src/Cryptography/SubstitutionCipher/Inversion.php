@@ -28,7 +28,7 @@ use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 /**
  * Inversion substitution: "Atbash cipher"
  *
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Inversion
     extends Simple

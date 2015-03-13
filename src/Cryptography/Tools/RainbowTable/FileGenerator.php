@@ -27,7 +27,7 @@ use \Cryptography\Helper;
 use \Library\Helper\File as FileHelper;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class FileGenerator
 {

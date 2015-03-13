@@ -28,7 +28,7 @@ use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 use \Cryptography\Analysis\Position as PositionAnalyzer;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class TextRepertory
     extends SimpleSubstitutionTable

@@ -27,7 +27,7 @@ use \Cryptography\SubstitutionCipher\Square;
 use \Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class PolybeSquareCipher
     extends AbstractSubstitutionCipherPreset

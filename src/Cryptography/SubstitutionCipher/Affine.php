@@ -30,7 +30,7 @@ use \Cryptography\SubstitutionTable\Closure as ClosureSubstitutionTable;
  *
  *      y = a * x + b
  *
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Affine
     extends Simple

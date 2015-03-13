@@ -27,7 +27,7 @@ use \Cryptography\Helper;
 use \Cryptography\SubstitutionTable\Rotary as RotarySubstitutionTable;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class PolyAlphabetic
     extends Simple

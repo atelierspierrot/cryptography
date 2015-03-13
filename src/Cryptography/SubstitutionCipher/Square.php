@@ -28,7 +28,7 @@ use \Cryptography\SubstitutionTable\Square as SquareSubstitutionTable;
 /**
  * Square substitution: "Polybe square cipher" like
  *
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Square
     extends Simple

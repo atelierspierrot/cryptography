@@ -27,7 +27,7 @@ use \Cryptography\SubstitutionCipher\Inversion;
 use \Cryptography\SubstitutionCipher\AbstractSubstitutionCipherPreset;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class AtbashCipher
     extends AbstractSubstitutionCipherPreset

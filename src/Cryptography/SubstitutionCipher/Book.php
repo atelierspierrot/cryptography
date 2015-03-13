@@ -27,7 +27,7 @@ use \Cryptography\Helper;
 use \Cryptography\SubstitutionTable\TextRepertory as TextRepertorySubstitutionTable;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Book
     extends Simple

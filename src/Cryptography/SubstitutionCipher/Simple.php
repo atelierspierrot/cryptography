@@ -26,7 +26,7 @@ use \Cryptography\Cryptography;
 use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Simple
     extends AbstractSubstitutionCipher

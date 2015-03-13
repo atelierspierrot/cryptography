@@ -25,7 +25,7 @@ namespace Cryptography\SubstitutionTable;
 use \Cryptography\Cryptography;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Simple
     extends AbstractSubstitutionTable

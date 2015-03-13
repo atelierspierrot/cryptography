@@ -26,7 +26,7 @@ use \Cryptography\Helper;
 use \Cryptography\SubstitutionCipher\Simple as SimpleCipher;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class TabulaRecta
 {

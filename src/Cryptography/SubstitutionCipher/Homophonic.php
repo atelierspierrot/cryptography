@@ -27,7 +27,7 @@ use \Cryptography\Helper;
 use \Cryptography\SubstitutionTable\Simple as SimpleSubstitutionTable;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class Homophonic
     extends Simple

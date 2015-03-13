@@ -27,7 +27,7 @@ use \Cryptography\Helper;
 use \Maths\Arithmetic\Helper as MathsHelper;
 
 /**
- * @author  Piero Wbmstr <me@e-piwi.fr>
+ * @author  piwi <me@e-piwi.fr>
  */
 class StringBuilder
 {
