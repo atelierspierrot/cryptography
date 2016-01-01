@@ -6,7 +6,7 @@
  * `E_ALL & ~E_STRICT` => for hard dev in PHP5.4 avoiding strict warnings
  * `E_ALL & ~E_NOTICE & ~E_STRICT` => classic setting
  */
-@ini_set('display_errors','1'); @error_reporting(E_ALL);
+@ini_set('display_errors', '1'); @error_reporting(E_ALL);
 //@ini_set('display_errors','1'); @error_reporting(E_ALL & ~E_STRICT);
 //@ini_set('display_errors','1'); @error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 
@@ -198,7 +198,7 @@ echo "> ciphered key is : '$key'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\Simple($plain, $key);
 echo "> Simple object is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -233,7 +233,7 @@ echo "> rotation value is : '$rot'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\Rotation($plain, $rot);
 echo "> Rotation object is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -269,7 +269,7 @@ echo "> a is : '$a' & b is : '$b'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\Affine($a, $b, $plain);
 echo "> Affineobject is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 //$crypted = $c->crypt('ELECTION'); // => RMRLKDVS
@@ -304,7 +304,7 @@ echo "> plain text key is : '$plain'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\Inversion($plain);
 echo "> Inversion is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -338,7 +338,7 @@ echo "> plain text key is : '$plain'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\Square($plain);
 echo "> Square is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -402,7 +402,7 @@ var_dump($keys);
 
 $c = new \Cryptography\SubstitutionCipher\Homophonic($keys);
 echo "> Homophonic is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -468,7 +468,7 @@ var_dump($keys);
 
 $c = new \Cryptography\SubstitutionCipher\Repertory($keys);
 echo "> Repertory is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;
@@ -524,7 +524,7 @@ echo "> rotation value is : '$rot'".PHP_EOL;
 
 $c = new \Cryptography\SubstitutionCipher\PolyAlphabetic($plain, $freq, $rot);
 echo "> PolyAlphabetic is : ".PHP_EOL;
-echo var_export($c,1).PHP_EOL;
+echo var_export($c, 1).PHP_EOL;
 
 $crypted = $c->crypt($str);
 echo "> crypted string is : ".$crypted.PHP_EOL;

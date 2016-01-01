@@ -34,7 +34,7 @@ Author & License
 
 >    http://github.com/atelierspierrot/cryptography
 
->    Copyright 2014-2015, Pierre Cassat and contributors
+>    Copyright 2014-2016, Pierre Cassat and contributors
 
 >    Licensed under the Apache 2.0 license.
 

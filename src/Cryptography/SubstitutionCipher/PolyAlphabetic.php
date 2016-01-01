@@ -2,7 +2,7 @@
 /**
  * This file is part of the Cryptography package.
  *
- * Copyright (c) 2014-2015 Pierre Cassat <me@e-piwi.fr> and contributors
+ * Copyright (c) 2014-2016 Pierre Cassat <me@e-piwi.fr> and contributors
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,9 @@ class PolyAlphabetic
         $ptk = $this->substitution_table->getPlaintextKey();
         $r = array();
         for ($i=0; $i<floor(strlen($ptk) / $this->frequency); $i++) {
-            if ($i > 0) { $this->substitution_table->rotate(); }
+            if ($i > 0) {
+                $this->substitution_table->rotate();
+            }
             $ciphers = $this->substitution_table->getSubstitutions();
             $r[] = str_split($ciphers[0]);
         }
@@ -202,7 +204,4 @@ class PolyAlphabetic
         }
         return ($as_array ? $r : implode('', $r));
     }
-
 }
-
-// Endfile
