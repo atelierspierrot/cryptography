@@ -12,6 +12,9 @@
         <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/typeahead.min.js"></script>
         <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     
     
     </head>
@@ -73,7 +76,8 @@
     </div>
 
     <p>    class
-    <strong>Simple</strong>        extends <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></p>
+    <strong>Simple</strong>        extends <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
+</p>
 
     
     
@@ -85,52 +89,65 @@
                     <div class="row">
                 <div class="col-md-2 type">
                     
+    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $plaintext_key = &#039;&#039;, array $substitution_table = array())
+                    <a href="#method___construct">__construct</a>(
+    string $plaintext_key = &#039;&#039;, 
+    array $substitution_table = array())
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setPlaintextKey">setPlaintextKey</a>($str)
                                             <p>Define the plain text key</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setPlaintextKey"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setPlaintextKey"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setSubstitutions">setSubstitutions</a>(array $table)
+                    <a href="#method_setSubstitutions">setSubstitutions</a>(
+    array $table)
                                             <p>Define the substitutions table</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setSubstitutions"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setSubstitutions"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addSubstitution">addSubstitution</a>($str)
                                             <p>Add an entry to the substitutions table</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_addSubstitution"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_addSubstitution"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
+    string
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_substitutionTableToString">substitutionTableToString</a>()
                                             <p>Debugging the substitutions table</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array|mixed|string
+                    
+    mixed
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getPlaintextKey">getPlaintextKey</a>()
@@ -140,7 +157,8 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array|mixed
+                    
+    mixed
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getSubstitutions">getSubstitutions</a>()
@@ -150,10 +168,12 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array|mixed
+                    
+    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>(int $action = Cryptography::CRYPT)
+                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>(
+    int $action = Cryptography::CRYPT)
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -166,9 +186,12 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 39</div>
+        <div class="location">at line 38</div>
         <code>                    
-    <strong>__construct</strong>(string $plaintext_key = &#039;&#039;, array $substitution_table = array())</code>
+    
+    <strong>__construct</strong>(
+    string $plaintext_key = &#039;&#039;, 
+    array $substitution_table = array())</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -176,13 +199,15 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
+                <td>
+    string</td>
                 <td>$plaintext_key</td>
                 <td>
 </td>
             </tr>
                     <tr>
-                <td>array</td>
+                <td>
+    array</td>
                 <td>$substitution_table</td>
                 <td>
 </td>
@@ -198,8 +223,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setPlaintextKey">
-        <div class="location">in <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setPlaintextKey"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 66</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setPlaintextKey"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 65</div>
+        <code>                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
     <strong>setPlaintextKey</strong>($str)</code>
     </h3>
     <div class="details">
@@ -222,7 +249,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
+            <td>
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
             <td>
 </td>
         </tr>
@@ -236,9 +264,12 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setSubstitutions">
-        <div class="location">in <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setSubstitutions"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 78</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
-    <strong>setSubstitutions</strong>(array $table)</code>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_setSubstitutions"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 77</div>
+        <code>                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+    <strong>setSubstitutions</strong>(
+    array $table)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -248,7 +279,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>array</td>
+                <td>
+    array</td>
                 <td>$table</td>
                 <td>
 </td>
@@ -260,7 +292,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
+            <td>
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
             <td>
 </td>
         </tr>
@@ -274,8 +307,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addSubstitution">
-        <div class="location">in <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_addSubstitution"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 90</div>
-        <code>                    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_addSubstitution"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 89</div>
+        <code>                    
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr>
     <strong>addSubstitution</strong>($str)</code>
     </h3>
     <div class="details">
@@ -298,7 +333,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
+            <td>
+    <abbr title="Cryptography\SubstitutionTable\$this">$this</abbr></td>
             <td>
 </td>
         </tr>
@@ -312,8 +348,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_substitutionTableToString">
-        <div class="location">in <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 101</div>
-        <code>                    string
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html#method_substitutionTableToString"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> at line 100</div>
+        <code>                    
+    string
     <strong>substitutionTableToString</strong>()</code>
     </h3>
     <div class="details">
@@ -325,7 +363,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td>
+    string</td>
             <td>
 </td>
         </tr>
@@ -339,8 +378,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPlaintextKey">
-        <div class="location">at line 51</div>
-        <code>                    array|mixed|string
+        <div class="location">at line 50</div>
+        <code>                    
+    mixed
     <strong>getPlaintextKey</strong>()</code>
     </h3>
     <div class="details">
@@ -350,7 +390,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>array|mixed|string</td>
+            <td>
+    mixed</td>
             <td>
 </td>
         </tr>
@@ -364,8 +405,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSubstitutions">
-        <div class="location">at line 59</div>
-        <code>                    array|mixed
+        <div class="location">at line 58</div>
+        <code>                    
+    mixed
     <strong>getSubstitutions</strong>()</code>
     </h3>
     <div class="details">
@@ -375,7 +417,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>array|mixed</td>
+            <td>
+    mixed</td>
             <td>
 </td>
         </tr>
@@ -389,9 +432,11 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSubstitutionTable">
-        <div class="location">at line 68</div>
-        <code>                    array|mixed
-    <strong>getSubstitutionTable</strong>(int $action = Cryptography::CRYPT)</code>
+        <div class="location">at line 67</div>
+        <code>                    
+    mixed
+    <strong>getSubstitutionTable</strong>(
+    int $action = Cryptography::CRYPT)</code>
     </h3>
     <div class="details">
                 <div class="tags">
@@ -399,7 +444,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>int</td>
+                <td>
+    int</td>
                 <td>$action</td>
                 <td>
 </td>
@@ -411,7 +457,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>array|mixed</td>
+            <td>
+    mixed</td>
             <td>
 </td>
         </tr>

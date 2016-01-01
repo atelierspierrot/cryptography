@@ -2,7 +2,7 @@
 /**
  * This file is part of the Cryptography package.
  *
- * Copyright (c) 2014-2015 Pierre Cassat <me@e-piwi.fr> and contributors
+ * Copyright (c) 2014-2016 Pierre Cassat <me@e-piwi.fr> and contributors
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ use \Maths\Arithmetic\Helper as MathsHelper;
 /**
  * @author  piwi <me@e-piwi.fr>
  */
-class RainbowTableGenerator
+class FileReader
 {
 
     protected $closure;
@@ -52,16 +52,16 @@ class RainbowTableGenerator
     {
         switch ($fct) {
             case 'md5':
-                $this->closure = function($str,$orig) { return md5($str)==$orig; };
+                $this->closure = function ($str, $orig) { return md5($str)==$orig; };
                 break;
             case 'sha1':
-                $this->closure = function($str,$orig) { return sha1($str)==$orig; };
+                $this->closure = function ($str, $orig) { return sha1($str)==$orig; };
                 break;
             case 'sha256':
-                $this->closure = function($str,$orig) { return hash('sha256', $str)==$orig; };
+                $this->closure = function ($str, $orig) { return hash('sha256', $str)==$orig; };
                 break;
             case 'crc32':
-                $this->closure = function($str,$orig) { return hash('crc32', $str)==$orig; };
+                $this->closure = function ($str, $orig) { return hash('crc32', $str)==$orig; };
                 break;
             default:
                 if (is_callable($fct)) {
@@ -70,7 +70,7 @@ class RainbowTableGenerator
                     if (is_string($fct)) {
                         $algos = hash_algos();
                         if (in_array($fct, $algos)) {
-                            $this->closure = function($str,$orig) use ($fct) { return hash($fct, $str)==$orig; };
+                            $this->closure = function ($str, $orig) use ($fct) { return hash($fct, $str)==$orig; };
                         } else {
                             throw new \InvalidArgumentException(
                                 sprintf('Hash algorithm "%s" not found!', $fct)
@@ -101,7 +101,6 @@ class RainbowTableGenerator
 
     public function generate($characters = array())
     {
-
         return $this->doProcess($str, $this->closure);
     }
 
@@ -131,7 +130,4 @@ class RainbowTableGenerator
         }
         return null;
     }
-
 }
-
-// Endfile

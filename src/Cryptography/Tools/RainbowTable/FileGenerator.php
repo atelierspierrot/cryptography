@@ -2,7 +2,7 @@
 /**
  * This file is part of the Cryptography package.
  *
- * Copyright (c) 2014-2015 Pierre Cassat <me@e-piwi.fr> and contributors
+ * Copyright (c) 2014-2016 Pierre Cassat <me@e-piwi.fr> and contributors
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,19 +72,19 @@ class FileGenerator
     {
         switch ($fct) {
             case 'md5':
-                $this->closure = function($str) { return md5($str); };
+                $this->closure = function ($str) { return md5($str); };
                 $this->closure_name = $fct;
                 break;
             case 'sha1':
-                $this->closure = function($str) { return sha1($str); };
+                $this->closure = function ($str) { return sha1($str); };
                 $this->closure_name = $fct;
                 break;
             case 'sha256':
-                $this->closure = function($str) { return hash('sha256', $str); };
+                $this->closure = function ($str) { return hash('sha256', $str); };
                 $this->closure_name = $fct;
                 break;
             case 'crc32':
-                $this->closure = function($str) { return hash('crc32', $str); };
+                $this->closure = function ($str) { return hash('crc32', $str); };
                 $this->closure_name = $fct;
                 break;
             default:
@@ -95,7 +95,7 @@ class FileGenerator
                     if (is_string($fct)) {
                         $algos = hash_algos();
                         if (in_array($fct, $algos)) {
-                            $this->closure = function($str) use ($fct) { return hash($fct, $str); };
+                            $this->closure = function ($str) use ($fct) { return hash($fct, $str); };
                             $this->closure_name = $fct;
                         } else {
                             throw new \InvalidArgumentException(
@@ -167,7 +167,4 @@ class FileGenerator
             throw $e;
         }
     }
-
 }
-
-// Endfile

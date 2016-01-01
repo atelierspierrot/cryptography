@@ -12,6 +12,9 @@
         <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/typeahead.min.js"></script>
         <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     
     
     </head>
@@ -73,7 +76,8 @@
     </div>
 
     <p>    class
-    <strong>Repertory</strong>        extends <a href="../../Cryptography/SubstitutionCipher/Homophonic.html"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a></p>
+    <strong>Repertory</strong>        extends <a href="../../Cryptography/SubstitutionCipher/Homophonic.html"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a>
+</p>
 
             <div class="description">
             <p>The keys here must be defined as an array like:</p>            <p>array(
@@ -90,74 +94,94 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+                    
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setSubstitutionTable">setSubstitutionTable</a>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)
+                    <a href="#method_setSubstitutionTable">setSubstitutionTable</a>(
+    <abbr title="Cryptography\SubstitutionCipher\Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr> $object)
                                             <p>Define the cipher substitution table object</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
-                                            <p>Retrieve the cipher substitution object</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setFlag">setFlag</a>($flag)
-                                            <p>Define the behavior flag of the object</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    mixed
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_process">process</a>()
-                                            <p>Generic method to dispatch the "to do" action</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(array $keys_table, int $flag = Cryptography::PROCESS_ALL)
-                                            <p>The keys here must be defined as an array like:</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cryptography/SubstitutionCipher/Homophonic.html#method___construct"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a></small></div>
+                    <a href="#method_getSubstitutionTable">getSubstitutionTable</a>()
+                                            <p>Retrieve the cipher substitution object</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
-                                            <p>Debugging the substitution table</p>                </div>
-                <div class="col-md-2"></div>
+                    <a href="#method_setFlag">setFlag</a>($flag)
+                                            <p>Define the behavior flag of the object</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array|string
+                    
+    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_crypt">crypt</a>(string $str, bool $as_array = false)
+                    <a href="#method_process">process</a>()
+                                            <p>Generic method to dispatch the "to do" action</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array|string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_crypt">crypt</a>(
+    string $str, 
+    bool $as_array = false)
                                             <p>Crypt a string</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array|string
+                    
+    array|string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_decrypt">decrypt</a>(string $str, bool $as_array = false)
+                    <a href="#method_decrypt">decrypt</a>(
+    string $str, 
+    bool $as_array = false)
                                             <p>Decrypt a string</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    array $keys_table, 
+    int $flag = Cryptography::PROCESS_ALL)
+                                            <p>The keys here must be defined as an array like:</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../Cryptography/SubstitutionCipher/Homophonic.html#method___construct"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_substitutionTableToString">substitutionTableToString</a>()
+                                            <p>Debugging the substitution table</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -168,9 +192,12 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setSubstitutionTable">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 57</div>
-        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
-    <strong>setSubstitutionTable</strong>(<a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a> $object)</code>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 56</div>
+        <code>                    
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+    <strong>setSubstitutionTable</strong>(
+    <abbr title="Cryptography\SubstitutionCipher\Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr> $object)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -180,7 +207,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
+                <td>
+    <abbr title="Cryptography\SubstitutionCipher\Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></td>
                 <td>$object</td>
                 <td>
 </td>
@@ -192,7 +220,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
+            <td>
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
             <td>
 </td>
         </tr>
@@ -206,8 +235,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSubstitutionTable">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 68</div>
-        <code>                    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_getSubstitutionTable"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 67</div>
+        <code>                    
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a>
     <strong>getSubstitutionTable</strong>()</code>
     </h3>
     <div class="details">
@@ -219,7 +250,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
+            <td>
+    <a href="../../Cryptography/SubstitutionTable/AbstractSubstitutionTable.html"><abbr title="Cryptography\SubstitutionTable\AbstractSubstitutionTable">AbstractSubstitutionTable</abbr></a></td>
             <td>
 </td>
         </tr>
@@ -233,8 +265,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setFlag">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 79</div>
-        <code>                    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_setFlag"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 78</div>
+        <code>                    
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr>
     <strong>setFlag</strong>($flag)</code>
     </h3>
     <div class="details">
@@ -257,7 +291,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
+            <td>
+    <abbr title="Cryptography\SubstitutionCipher\$this">$this</abbr></td>
             <td>
 </td>
         </tr>
@@ -271,8 +306,10 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_process">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 90</div>
-        <code>                    mixed
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionCipher/AbstractSubstitutionCipher.html#method_process"><abbr title="Cryptography\SubstitutionCipher\AbstractSubstitutionCipher">AbstractSubstitutionCipher</abbr></a> at line 89</div>
+        <code>                    
+    mixed
     <strong>process</strong>()</code>
     </h3>
     <div class="details">
@@ -284,7 +321,104 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>mixed</td>
+            <td>
+    mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_crypt">
+        <div class="location">at line 95</div>
+        <code>                    
+    array|string
+    <strong>crypt</strong>(
+    string $str, 
+    bool $as_array = false)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Crypt a string</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$str</td>
+                <td>The string to crypt</td>
+            </tr>
+                    <tr>
+                <td>
+    bool</td>
+                <td>$as_array</td>
+                <td>Get the result as an array or a string (default)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array|string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_decrypt">
+        <div class="location">at line 120</div>
+        <code>                    
+    array|string
+    <strong>decrypt</strong>(
+    string $str, 
+    bool $as_array = false)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Decrypt a string</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$str</td>
+                <td>The string to decrypt</td>
+            </tr>
+                    <tr>
+                <td>
+    bool</td>
+                <td>$as_array</td>
+                <td>Get the result as an array or a string (default)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array|string</td>
             <td>
 </td>
         </tr>
@@ -298,9 +432,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../Cryptography/SubstitutionCipher/Homophonic.html#method___construct"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a> at line 57</div>
+        <div class="location">in 
+    <a href="../../Cryptography/SubstitutionCipher/Homophonic.html#method___construct"><abbr title="Cryptography\SubstitutionCipher\Homophonic">Homophonic</abbr></a> at line 56</div>
         <code>                    
-    <strong>__construct</strong>(array $keys_table, int $flag = Cryptography::PROCESS_ALL)</code>
+    
+    <strong>__construct</strong>(
+    array $keys_table, 
+    int $flag = Cryptography::PROCESS_ALL)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -312,13 +450,15 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>array</td>
+                <td>
+    array</td>
                 <td>$keys_table</td>
                 <td>
 </td>
             </tr>
                     <tr>
-                <td>int</td>
+                <td>
+    int</td>
                 <td>$flag</td>
                 <td>
 </td>
@@ -334,8 +474,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_substitutionTableToString">
-        <div class="location">at line 80</div>
-        <code>                    string
+        <div class="location">at line 79</div>
+        <code>                    
+    string
     <strong>substitutionTableToString</strong>()</code>
     </h3>
     <div class="details">
@@ -347,91 +488,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
             <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_crypt">
-        <div class="location">at line 96</div>
-        <code>                    array|string
-    <strong>crypt</strong>(string $str, bool $as_array = false)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Crypt a string</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$str</td>
-                <td>The string to crypt</td>
-            </tr>
-                    <tr>
-                <td>bool</td>
-                <td>$as_array</td>
-                <td>Get the result as an array or a string (default)</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>array|string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_decrypt">
-        <div class="location">at line 121</div>
-        <code>                    array|string
-    <strong>decrypt</strong>(string $str, bool $as_array = false)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Decrypt a string</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$str</td>
-                <td>The string to decrypt</td>
-            </tr>
-                    <tr>
-                <td>bool</td>
-                <td>$as_array</td>
-                <td>Get the result as an array or a string (default)</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>array|string</td>
+    string</td>
             <td>
 </td>
         </tr>
